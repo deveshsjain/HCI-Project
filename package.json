@@ -1,0 +1,23 @@
+{
+  "name": "hci-project",
+  "version": "1.0.0",
+  "description": "Compliling SAAS and Bootstrap",
+  "main": "app,js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rozy Gupta 10442449",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "popper.js": "^1.14.7"
+  },
+  "devDependencies": {
+    "bootstrap-4": "^4.0.0",
+    "jquery": "^3.3.1",
+    "tether": "^1.4.5"
+  }
+}
