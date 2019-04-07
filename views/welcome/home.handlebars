@@ -25,71 +25,79 @@
                 </div>
                 {{/if}}
                 <div>
-                <form class="form-inline my-2 my-lg-0" id="login-form" method="POST" action="/home">
-                    <input class="form-control mr-sm-2" name="username" id="username" type="Username"
-                        placeholder="Username" aria-label="Search">
-                    <input class="form-control mr-sm-2" name="password" id="password" type="Password"
-                        placeholder="Password" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
-                        type="submit">Login</button>
-                     </form>       
-               </div>
-               <div>
-                   <button class="btn btn-outline-success my-2 my-sm-0" name="signup" id="signup" data-toggle="modal" data-target="#exampleModal">SignUp</button>
-                   {{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button> --}}
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-               </div>
+                    <form class="form-inline my-2 my-lg-0" id="login-form" method="POST" action="/home">
+                        <input class="form-control mr-sm-2" name="username" id="username" type="Username"
+                            placeholder="Username" aria-label="Search">
+                        <input class="form-control mr-sm-2" name="password" id="password" type="Password"
+                            placeholder="Password" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
+                            type="submit">Login</button>
+                    </form>
                 </div>
-                </nav>
-        
-        <div class="col-md-10 ml-5 mt-3">
+                <div>
+                    <button class="btn btn-outline-success my-2 my-sm-0 ml-2" name="signup" id="signup"
+                        data-toggle="modal" data-target="#modalRegisterForm">SignUp</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header text-center">
+                                    <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body mx-3">
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input type="text" id="orangeForm-name" class="form-control validate">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-name">Your
+                                            name</label>
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-envelope prefix grey-text"></i>
+                                        <input type="email" id="orangeForm-email" class="form-control validate">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-email">Your
+                                            email</label>
+                                    </div>
+
+                                    <div class="md-form mb-4">
+                                        <i class="fas fa-lock prefix grey-text"></i>
+                                        <input type="password" id="orangeForm-pass" class="form-control validate">
+                                        <label data-error="wrong" data-success="right" for="orangeForm-pass">Your
+                                            password</label>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer d-flex justify-content-center">
+                                    <button class="btn btn-deep-orange">Sign up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="col-md-10 mt-3 ml-5">
             <div
                 class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-primary">World</strong>
-                    <h3 class="mb-0">Featured post</h3>
-                    <div class="mb-1 text-muted">Nov 12</div>
-                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
-                        additional content.
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content.
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content.
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content.
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content.
-                    </p>
+                    <strong class="d-inline-block mb-2 text-success">Design</strong>
+                    <h3 class="mb-0">Post title</h3>
+                    <div class="mb-1 text-muted">Nov 11</div>
+                    <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
+                        additional
+                        content.</p>
                     <a href="#" class="stretched-link">Continue reading</a>
                 </div>
                 <div class="col-auto d-none d-lg-block">
                     <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
                         preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                         aria-label="Placeholder: Thumbnail">
-                        <img src=".\public\images\img-8.jpg" class="img-thumbnail" alt="Cinque Terre" width="200"
-                            height="500">
+                        <img src=".\public\images\img-8.jpg" alt="Cinque Terre" width="500" height="300">
                     </svg>
                 </div>
             </div>
@@ -103,14 +111,6 @@
                     <div class="mb-1 text-muted">Nov 11</div>
                     <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
                         additional
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional
                         content.</p>
                     <a href="#" class="stretched-link">Continue reading</a>
                 </div>
@@ -118,15 +118,12 @@
                     <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
                         preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                         aria-label="Placeholder: Thumbnail">
-                        <img src=".\public\images\img-8.jpg" class="img-thumbnail" alt="Cinque Terre" width="200"
-                            height="500">
+                        <img src=".\public\images\img-8.jpg" alt="Cinque Terre" width="500" height="300">
                     </svg>
                 </div>
             </div>
         </div>
-
         <div class="col text-center">
-
             <a class="nav-link active" align="center" href="#username">Login</a>
             <a class="nav-link active" align="center" href="#signup">SignUp</a>
         </div>
