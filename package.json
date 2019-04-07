@@ -4,12 +4,14 @@
   "description": "Compliling SAAS and Bootstrap",
   "main": "app,js",
   "scripts": {
+    "seed": "node ./BudgetTracker/seed.js",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rozy Gupta 10442449",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
