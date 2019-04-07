@@ -14,6 +14,8 @@ const getCollectionFn = collection => {
 };
 
 module.exports = {
+  session: getCollectionFn("session"),
   user: getCollectionFn("user"),
+  authentication: getCollectionFn("authentication"),
 
 };

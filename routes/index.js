@@ -1,22 +1,5 @@
-// const resultRoutes = require("./result");
-// const path = require("path");
-
-// const constructorMethod = app => {
-//     app.use(bodyParser.json());
-//     app.use("/", resultRoutes);
-//    // app.use("/howitworks", resultRoutes)
-    
-//     app.use("*", (req, res) => {
-//         res.redirect("/result");
-//     });
-// };
-
-// module.exports = constructorMethod;
-
-
-
 const homeRoutes = require("./home");
-
+const dashboard = require("./dashboard");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
@@ -28,6 +11,7 @@ const constructorMethod = app => {
   app.use(bodyParser.json());
   try {
     app.use("/", homeRoutes);
+    app.use("/dashboard", dashboard);
 
   }
   catch (error) {
