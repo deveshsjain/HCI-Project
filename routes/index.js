@@ -12,6 +12,7 @@ const constructorMethod = app => {
   try {
     app.use("/", homeRoutes);
     app.use("/dashboard", dashboard);
+    app.use("/expenses", expenses);
 
   }
   catch (error) {
