@@ -44,7 +44,7 @@ router.get('/', userAuth,async (req, res) => {
         // ];
         // let month = monthNames[d.getUTCMonth()];
 
-        res.render("welcome/dashboard", {
+        res.render("welcome/deposit", {
             title: "Dashboard",
             // firstname: userdetail.firstname,
             // lastname: userdetail.lastname,
