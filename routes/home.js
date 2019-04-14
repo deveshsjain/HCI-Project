@@ -72,4 +72,12 @@ router.get("/howitworks", (req, res) => {
     res.render('welcome/howitworks');
 });
 
+router.get("/expenses", (req, res) => {
+  res.render('welcome/expenses');
+});
+
+router.get("/deposit", (req, res) => {
+  res.render('welcome/deposit');
+});
+
 module.exports = router;
