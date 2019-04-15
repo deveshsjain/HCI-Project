@@ -29,30 +29,28 @@
             </div>
         </nav>
 
-        <!-- Modal -->
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add expenses</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="d-inline text-black">Type:</div>
-                    <input type="text" class="form-control col-3" id="basic-url" aria-describedby="basic-addon3">
+<form id="deposit-form" method="POST" action="/deposit">
+        <div class="card border-primary mb-3 mx-auto">
+            <div class="card-header bg-dark text-font-white">Add Bank Account</div>
+            <div class="card-body text-primary">
+                {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
+                
+                    <div class="d-inline text-font-black">Account Type:</div>
+                    <input type="text" class="form-control col-10 mt-2" id="basic-url" aria-describedby="basic-addon3">
 
-                    <div class="d-inline text-black">Bank Name:</div>
-                    <input type="text" class="form-control col-3" id="basic-url" aria-describedby="basic-addon3">
+                    <div class="d-inline text-font-black">Bank Name:</div>
+                    <input type="text" class="form-control col-10 mt-2" id="basic-url" aria-describedby="basic-addon3">
 
-                    <div class="d-inline text-black">Amount:</div>
-                    <input type="text" class="form-control col-3" id="basic-url" aria-describedby="basic-addon3">
+                    <div class="d-inline text-font-black">Amount:</div>
+                    <input type="text" class="form-control col-10 mt-2" id="basic-url" aria-describedby="basic-addon3">
 
-                    <div class="d-inline text-black">Account Open Date:</div>
-                    <input type="text" class="form-control col-3" id="basic-url" aria-describedby="basic-addon3">
-                </div>
-                <div class="modal-footer">
-                    {{!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Previous</button>
-                    <button type="button" class="btn btn-primary">Next</button> --}}
-                    <a href="/expenses"><button type="button" class="btn btn-primary">OK</button></a>
-                </div>
+                    <div class="d-inline text-font-black">Account Open Date:</div>
+                    <input type="text" class="form-control col-10 mt-2" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+            <div class="modal-footer bg-dark">
+                <a href="/deposit"><button type="button" class="btn btn-secondary">Add New Account</button></a>
+                <a href="/expenses"><button type="button" class="btn btn-primary">OK</button></a>
+                </form>
             </div>
         </div>
     </div>
