@@ -1,73 +1,71 @@
 <article>
-<div class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="http://localhost:3000">Budget Tracker</a>
+    <div class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="http://localhost:3000">Budget Tracker</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./howitworks">How it works</a>
-                </li>
-            </ul>
-            {{#if error}}
-            <div class="alert alert-danger" role="alert">
-                {{error}}
-            </div>
-            {{/if}}
-            {{#if logoutMsg}}
-            <div class="alert alert-success" role="alert">
-                {{logoutMsg}}
-            </div>
-            {{/if}}
-            <a href="/Logout"><button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
-                    type="submit">Logout</button></a>
-        </div>
-    </nav>
-
-    <!-- Modal -->
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Add expenses</h5>
-            </div>
-            <div class="modal-body">
-                <div class="dropdown">
-                    <div class="d-inline text-black">Category:</div>
-                    <button class="btn btn-smd btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./howitworks">How it works</a>
+                    </li>
+                </ul>
+                {{#if error}}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
                 </div>
-                <div class="d-inline text-black">Title:</div>
-                <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
-
-                <div class="d-inline text-black">Amount:</div>
-                <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
-
-                <div class="d-inline text-black">Mode of Payment:</div>
-                <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
-
-                <div class="d-inline text-black">Date:</div>
-                <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
-
-                <div class="d-inline text-black">Comments:</div>
-                <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
+                {{/if}}
+                {{#if logoutMsg}}
+                <div class="alert alert-success" role="alert">
+                    {{logoutMsg}}
+                </div>
+                {{/if}}
+                <a href="/Logout"><button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
+                        type="submit">Logout</button></a>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Previous</button>
-                <button type="button" class="btn btn-primary">Next</button>
-            </div>
-        </div>
+        </nav>
+        <form id="expenses-form" method="POST" action="/expenses">
+            <div class="card border-primary mb-3 mx-auto">
+                <div class="card-header bg-dark text-font-white">Add expenses</div>
+                <div class="card-body text-primary">
+                    {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
+        
+                    <div class="dropdown">
+                        <div class="d-inline text-font-black">Category:</div>
+                        <button class="btn btn-smd btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <div class="d-inline text-font-black">Title:</div>
+                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
+                    
+                    <div class="d-inline text-font-black">Amount:</div>
+                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
+                    
+                    <div class="d-inline text-font-black">Mode of Payment:</div>
+                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
+                    
+                    <div class="d-inline text-font-black">Date:</div>
+                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
+                    
+                    <div class="d-inline text-font-black">Comments:</div>
+                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
+                
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Previous</button>
+                    <button type="button" class="btn btn-primary">Next</button>
+                </div>
+        </form>
     </div>
-</div>
 </article>

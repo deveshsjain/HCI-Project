@@ -1,8 +1,8 @@
 const homeRoutes = require("./home");
-const dashboard = require("./dashboard");
+const deposit = require("./deposit");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-
+const expenses = require("./expenses")
 
 const constructorMethod = app => {
 
@@ -11,7 +11,7 @@ const constructorMethod = app => {
   app.use(bodyParser.json());
   try {
     app.use("/", homeRoutes);
-    app.use("/dashboard", dashboard);
+    app.use("/deposit", deposit);
     app.use("/expenses", expenses);
 
   }

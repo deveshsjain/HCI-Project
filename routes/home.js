@@ -47,7 +47,7 @@ router.post('/home', async function (req, res) {
         await session.createSession("authCookie", sessionId, userId);
         res.cookie('authCookie', sessionId);
         res.cookie('userId', userId);
-        res.redirect("/dashboard");
+        res.redirect("/deposit");
       }
     } catch (error) {
       res.status(500).render('welcome/home', {
@@ -70,14 +70,6 @@ router.post('/home', async function (req, res) {
   });
 router.get("/howitworks", (req, res) => {
     res.render('welcome/howitworks');
-});
-
-router.get("/expenses", (req, res) => {
-  res.render('welcome/expenses');
-});
-
-router.get("/deposit", (req, res) => {
-  res.render('welcome/deposit');
 });
 
 module.exports = router;

@@ -3,7 +3,7 @@ const router = express.Router();
 const data = require("../data");
 
 
-router.get("/expenses", (req, res) => {
+router.get("/", (req, res) => {
     res.render('welcome/expenses');
 });
 
