@@ -1,15 +1,15 @@
 const mongoCollections = require("../config/mongoCollections");
-const bankDetailsCollection = mongoCollections.bankdetails;
+const bankdetails = mongoCollections.bankdetails;
 const uuid = require('uuid/v1');
 
 
 const exportedMethods = {
     async addBankDetails(accounttype, bankname, amount,accountopendate) {
 
-        if (!accounttype) throw "No trainername provided";
-        if (!bankname) throw "No certifications provided";
-        if (!amount) throw "No biography provided";
-        if (!accountopendate) throw "No biography provided";
+        if (!accounttype) throw "No accounttype provided";
+        if (!bankname) throw "No bankname provided";
+        if (!amount) throw "No amount provided";
+        if (!accountopendate) throw "No accountopendate provided";
         const bankDetailsCollection = await bankdetails();
         const newDetails = {
             _id: uuid(),
@@ -24,7 +24,7 @@ const exportedMethods = {
 
         return {
             status: true,
-            addedtrainer,
+            addeddetails,
             newId
         }
 

@@ -1,14 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const data = require("../data");
-const user = data.user;
-const authentication=data.authentication;
-const activityData = data.activity;
-const noticeData = data.notice;
+const bankdetailsData=data.bankdetails;
 const session = data.session;
 const bodyParser = require('body-parser');
-const uuidv1 = require('uuid/v1');
 const cookieParser = require("cookie-parser");
+const xss = require("xss");
 
 router.use(cookieParser());
 router.use(bodyParser.json());
@@ -31,32 +28,8 @@ router.get('/', userAuth,async (req, res) => {
         let clientSessionId=req.cookies.authCookie;
         let userId = await session.getSessionById(clientSessionId);
         if (!userId) throw "Unauthorize access";
-        // userdetail = await user.getUserById(userId);
-        // let activity = await activityData.getAllActivities();
-        // let notice = await noticeData.getAllNotices();
-        // let trainerCount = (await user.getUserNameByRole("TRAINER")).length;
-        // let gymMemberCount = (await user.getUserNameByRole("gymMember")).length;
-        // let d = new Date();
-        // let date = d.getUTCDate();
-        // let year = d.getUTCFullYear();
-        // let monthNames = ["January", "February", "March", "April", "May", "June",
-        // "July", "August", "September", "October", "November", "December"
-        // ];
-        // let month = monthNames[d.getUTCMonth()];
-
-        res.render("welcome/deposit", {
+       res.render("welcome/bankdetails", {
             title: "Dashboard",
-            // firstname: userdetail.firstname,
-            // lastname: userdetail.lastname,
-            // activity:activity,
-            // notice:notice,
-            // trainerCount:trainerCount,
-            // gymMemberCount:gymMemberCount,
-            // layout:layout,
-            // month:month,
-            // date:date,
-            // year:year
-
         });
     } catch (error) {
         console.log(error);
@@ -69,61 +42,56 @@ router.get('/', userAuth,async (req, res) => {
     }
 });
 
-// router.post("/add",authRoute("addActivity"),async (req, res) => {
-//     let layout = await authentication.getLayout(req.cookies.userId);
-//     try {
+router.post("/",async (req, res) => {
+   
+    try {
        
-//         let activity = req.body;
-//         let activityname = xss(activity.activityname);
-//         let activitytrainer = xss(activity.activitytrainer);
-//         let membershipplan = xss(activity.membershipplan);
-//         let activityDescription = xss(activity.activityDescription);
+        let bankdetails = req.body;
+        console.log(bankdetails);
+        let accounttype = xss(bankdetails.accounttype);
+        let bankname = xss(bankdetails.bankname);
+        let amount = xss(bankdetails.amount);
+        let accountopendate = xss(bankdetails.accountopendate);
   
 
-//         if (!activityname) {
-//             res.render("addActivity", {
-//                 alertMsg: "Please provide activity name",
-//                 title: "addActivity"  ,
-//                 layout:layout 
-//             });
-//             return;
-//         }
-//         if (!activitytrainer) {
+        if (!accounttype) {
+            res.render("welcome/bankdetails", {
+                alertMsg: "Please provide account type",
+                title: "bankdetails"  , 
+            });
+            return;
+        }
+        if (!bankname) {
+            res.render("welcome/bankdetails", {
+                alertMsg: "Please provide bankname",
+                title: "bankdetails"  , 
+            });
+            return;
+        }
+        if (!amount) {
+            res.render("welcome/bankdetails", {
+                alertMsg: "Please provide amount",
+                title: "bankdetails"  , 
+            });
+            return;
+        }
+        if (!accountopendate) {
+            res.render("welcomebankdetails", {
+                alertMsg: "Please provide account open date",
+                title: "bankdetails"  , 
+            });
+            return;
+        }
+        await bankdetailsData.addBankDetails(accounttype, bankname, amount, accountopendate);
+        res.redirect("/bankdetails");
 
-//             res.render("addActivity", {
-//                 alertMsg: "Please provide activity trainer name",
-//                 title: "addActivity",  
-//                 layout:layout
-//             });
-//             return;
-//         }
-//         if (!membershipplan) {
-//             res.render("addActivity", {
-//                 alertMsg: "Please provide membershipplan",
-//                 layout:layout,
-//                 title: "addActivity"  
-//             });
-//             return;
-//         }
-//         if (!activityDescription) {
-//             res.render("addActivity", {
-//                 alertMsg: "Please provide activity description",
-//                 layout:layout,
-//                 title: "addActivity"   
-//             });
-//             return;
-//         }
-//         await activityData.addActivity(activityname, activitytrainer, membershipplan, activityDescription);
-//         res.redirect("/activity");
-
-//     } catch (error) {
-//         res.render("addActivity", {
-//             alertMsg: "error while adding activity",
-//             layout:layout,
-//             title:"activity"
-//         });
-//     }
-// });
+    } catch (error) {
+        res.render("welcome/bankdetails", {
+            alertMsg: "error while adding bankdetails",
+            title:"bankdetails"
+        });
+    }
+});
 
 router.get('/logout', function (req, res) {
     res.clearCookie("authCookie");
