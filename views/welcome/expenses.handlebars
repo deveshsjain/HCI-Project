@@ -44,12 +44,12 @@
                             Dropdown button
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> --}}
-                            <select id="category" name="category" class="form-control col-10" required>
-                                <option value="">Choose</option>
-                                <option value="Gold">Gold</option>
-                                <option value="Platinum">Platinum</option>
-                                <option value="Diamond">Diamond</option>
-                                <option value="Silver">Silver</option>
+                            <select id="category" name="category" class="form-control btn-primary col-10" required>
+                                <option value="">Taxes</option>
+                                <option value="Gold">Education</option>
+                                <option value="Platinum">Accomodation</option>
+                                <option value="Diamond">Utilities</option>
+                                <option value="Silver">Transport</option>
                             </select>
                         {{!-- </div> --}}
                     </div>
@@ -75,6 +75,8 @@
 
                 </div>
                 <div class="modal-footer bg-dark">
+                    <a href="/expenses"><button type="submit" name="addnewexpenses" id="addnewexpenses"
+                            class="btn btn-secondary">Add New Expenses</button></a>
                     <a href="./bankdetails"><button type="button" name="previous" id="previous" class="btn btn-secondary"
                         data-dismiss="modal">Previous</button></a>
                     <button type="button" name="next" id="next" class="btn btn-primary">Next</button>
