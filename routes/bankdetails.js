@@ -29,7 +29,7 @@ router.get('/', userAuth,async (req, res) => {
         let userId = await session.getSessionById(clientSessionId);
         if (!userId) throw "Unauthorize access";
        res.render("welcome/bankdetails", {
-            title: "Dashboard",
+            title: "bankdetails",
         });
     } catch (error) {
         console.log(error);
@@ -93,12 +93,12 @@ router.post("/",async (req, res) => {
     }
 });
 
-router.get('/logout', function (req, res) {
-    res.clearCookie("authCookie");
-    res.render("logout", {
-        layout: "index",
-        title: "Logout"
-    });
-});
+// router.get('/logout', function (req, res) {
+//     res.clearCookie("authCookie");
+//     res.render("logout", {
+//         layout: "index",
+//         title: "Logout"
+//     });
+// });
 
 module.exports = router;
