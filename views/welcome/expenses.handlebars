@@ -39,15 +39,19 @@
 
                     <div class="dropdown">
                         <div class="d-inline text-font-black">Category:</div>
-                        <button class="btn btn-smd btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        {{!-- <button class="btn btn-smd btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dropdown button
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> --}}
+                            <select id="category" name="category" class="form-control col-10" required>
+                                <option value="">Choose</option>
+                                <option value="Gold">Gold</option>
+                                <option value="Platinum">Platinum</option>
+                                <option value="Diamond">Diamond</option>
+                                <option value="Silver">Silver</option>
+                            </select>
+                        {{!-- </div> --}}
                     </div>
                     <div class="d-inline text-font-black">Title:</div>
                     <input type="text" class="form-control col-10" name="title" id="title"
