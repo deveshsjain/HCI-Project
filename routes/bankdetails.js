@@ -68,6 +68,63 @@ router.get('/', userAuth,async (req, res) => {
         });
     }
 });
+
+// router.post("/add",authRoute("addActivity"),async (req, res) => {
+//     let layout = await authentication.getLayout(req.cookies.userId);
+//     try {
+       
+//         let activity = req.body;
+//         let activityname = xss(activity.activityname);
+//         let activitytrainer = xss(activity.activitytrainer);
+//         let membershipplan = xss(activity.membershipplan);
+//         let activityDescription = xss(activity.activityDescription);
+  
+
+//         if (!activityname) {
+//             res.render("addActivity", {
+//                 alertMsg: "Please provide activity name",
+//                 title: "addActivity"  ,
+//                 layout:layout 
+//             });
+//             return;
+//         }
+//         if (!activitytrainer) {
+
+//             res.render("addActivity", {
+//                 alertMsg: "Please provide activity trainer name",
+//                 title: "addActivity",  
+//                 layout:layout
+//             });
+//             return;
+//         }
+//         if (!membershipplan) {
+//             res.render("addActivity", {
+//                 alertMsg: "Please provide membershipplan",
+//                 layout:layout,
+//                 title: "addActivity"  
+//             });
+//             return;
+//         }
+//         if (!activityDescription) {
+//             res.render("addActivity", {
+//                 alertMsg: "Please provide activity description",
+//                 layout:layout,
+//                 title: "addActivity"   
+//             });
+//             return;
+//         }
+//         await activityData.addActivity(activityname, activitytrainer, membershipplan, activityDescription);
+//         res.redirect("/activity");
+
+//     } catch (error) {
+//         res.render("addActivity", {
+//             alertMsg: "error while adding activity",
+//             layout:layout,
+//             title:"activity"
+//         });
+//     }
+// });
+
 router.get('/logout', function (req, res) {
     res.clearCookie("authCookie");
     res.render("logout", {
