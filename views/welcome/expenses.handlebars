@@ -29,11 +29,14 @@
             </div>
         </nav>
         <form id="expenses-form" method="POST" action="/expenses">
+            {{#if alertMsg}}
+            <p class="alertMsg">{{alertMsg}}</p>
+            {{/if }}
             <div class="card border-primary mb-3 mx-auto">
                 <div class="card-header bg-dark text-font-white">Add expenses</div>
                 <div class="card-body text-primary">
                     {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
-        
+
                     <div class="dropdown">
                         <div class="d-inline text-font-black">Category:</div>
                         <button class="btn btn-smd btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -47,24 +50,30 @@
                         </div>
                     </div>
                     <div class="d-inline text-font-black">Title:</div>
-                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
-                    
+                    <input type="text" class="form-control col-10" name="title" id="title"
+                        aria-describedby="basic-addon3">
+
                     <div class="d-inline text-font-black">Amount:</div>
-                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
-                    
+                    <input type="text" class="form-control col-10" name="amount" id="amount"
+                        aria-describedby="basic-addon3">
+
                     <div class="d-inline text-font-black">Mode of Payment:</div>
-                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
-                    
+                    <input type="text" class="form-control col-10" name="modeofpayment" id="modeofpayment"
+                        aria-describedby="basic-addon3">
+
                     <div class="d-inline text-font-black">Date:</div>
-                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
-                    
+                    <input type="date" class="form-control col-10" name="date" id="date"
+                        aria-describedby="basic-addon3">
+
                     <div class="d-inline text-font-black">Comments:</div>
-                    <input type="text" class="form-control col-10" id="basic-url" aria-describedby="basic-addon3">
-                
+                    <input type="text" class="form-control col-10" name="comments" id="comments"
+                        aria-describedby="basic-addon3">
+
                 </div>
                 <div class="modal-footer bg-dark">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Previous</button>
-                    <button type="button" class="btn btn-primary">Next</button>
+                    <button type="button" name="previous" id="previous" class="btn btn-secondary"
+                        data-dismiss="modal">Previous</button>
+                    <button type="button" name="next" id="next" class="btn btn-primary">Next</button>
                 </div>
         </form>
     </div>

@@ -29,29 +29,35 @@
             </div>
         </nav>
 
-<form id="deposit-form" method="POST" action="/deposit">
-        <div class="card border-primary mb-3 mx-auto">
-            <div class="card-header bg-dark text-font-white">Add Bank Account</div>
-            <div class="card-body text-primary">
-                {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
-                
+        <form id="deposit-form" method="POST" action="/bankdetails">
+            {{#if alertMsg}}
+            <p class="alertMsg">{{alertMsg}}</p>
+            {{/if }}
+            <div class="card border-primary mb-3 mx-auto">
+                <div class="card-header bg-dark text-font-white">Add Bank Account</div>
+                <div class="card-body text-primary">
+                    {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
+
                     <div class="d-inline text-font-black">Account Type:</div>
-                    <input type="text" class="form-control col-10 mt-2" id="basic-url" aria-describedby="basic-addon3">
+                    <input type="text" name="accounttype" id="accounttype" class="form-control col-10 mt-2"
+                        id="basic-url" aria-describedby="basic-addon3">
 
                     <div class="d-inline text-font-black">Bank Name:</div>
-                    <input type="text" class="form-control col-10 mt-2" id="basic-url" aria-describedby="basic-addon3">
+                    <input type="text" name="bankname" id="bankname" class="form-control col-10 mt-2" id="basic-url"
+                        aria-describedby="basic-addon3">
 
                     <div class="d-inline text-font-black">Amount:</div>
-                    <input type="text" class="form-control col-10 mt-2" id="basic-url" aria-describedby="basic-addon3">
+                    <input type="text" name="amount" id="amount" class="form-control col-10 mt-2" id="basic-url"
+                        aria-describedby="basic-addon3">
 
                     <div class="d-inline text-font-black">Account Open Date:</div>
-                    <input type="text" class="form-control col-10 mt-2" id="basic-url" aria-describedby="basic-addon3">
-            </div>
-            <div class="modal-footer bg-dark">
-                <a href="/deposit"><button type="button" class="btn btn-secondary">Add New Account</button></a>
-                <a href="/expenses"><button type="button" class="btn btn-primary">OK</button></a>
-                </form>
-            </div>
-        </div>
+                    <input type="text" name="accountopendate" id="accountopendate" class="form-control col-10 mt-2"
+                        id="basic-url" aria-describedby="basic-addon3">
+                </div>
+                <div class="modal-footer bg-dark">
+                    <a href="/deposit"><button type="button" name="addnewaccount" id="addnewaccount"
+                            class="btn btn-secondary">Add New Account</button></a>
+                    <a href="/expenses"><button type="button" name="ok" id="ok" class="btn btn-primary">OK</button></a>
+        </form>
     </div>
 </article>
