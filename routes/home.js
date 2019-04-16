@@ -47,7 +47,7 @@ router.post('/home', async function (req, res) {
         await session.createSession("authCookie", sessionId, userId);
         res.cookie('authCookie', sessionId);
         res.cookie('userId', userId);
-        res.redirect("/deposit");
+        res.redirect("/dashboard");
       }
     } catch (error) {
       res.status(500).render('welcome/home', {
