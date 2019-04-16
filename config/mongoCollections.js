@@ -17,5 +17,5 @@ module.exports = {
   session: getCollectionFn("session"),
   user: getCollectionFn("user"),
   authentication: getCollectionFn("authentication"),
-
+  bankdetails: getCollectionFn("bankdetails"),
 };
