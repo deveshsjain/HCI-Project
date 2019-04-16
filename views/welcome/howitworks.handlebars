@@ -24,39 +24,54 @@
 
 
 <article>
-    <div class="col-md-10 mt-3 ml-5">
-        <div
-            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-success">Video 1 - How to start</strong>
-                {{!-- <h3 class="mb-0">Post title</h3> --}}
-                {{!-- <div class="mb-1 text-muted">Nov 11</div> --}}
-                <p class="mb-auto">How to start</p>
-                {{!-- <a href="#" class="stretched-link">Continue reading</a> --}}
-            </div>
-            <div class="col-auto d-none d-lg-block">
-                <a href="#" data-target="#modalIMG" data-toggle="modal" class="color-gray-darker c6 td-hover-none">
-                    <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                        aria-label="Placeholder: Thumbnail">
-                        <img src=".\public\images\img-8.jpg" id="video-btn" alt="Cinque Terre" width="500" height="300"
-                            class="video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/Jfrjeg26Cwk"
-                            data-target="#video1">
-                    </svg>
-                </a>
+    <div class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="http://localhost:3000">Budget Tracker</a>
 
-                <div class="modal fade" id="video1" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <!-- 16:9 aspect ratio -->
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
-                                        allow="autoplay">
-                                    </iframe>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto"></ul>
+                <a href="/"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Home</button></a>
+            </div>
+        </nav>
+        <div class="col-md-10 mt-3 ml-5">
+            <div
+                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">Video 1 - How to start</strong>
+                    {{!-- <h3 class="mb-0">Post title</h3> --}}
+                    {{!-- <div class="mb-1 text-muted">Nov 11</div> --}}
+                    <p class="mb-auto">How to start</p>
+                    {{!-- <a href="#" class="stretched-link">Continue reading</a> --}}
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <a href="#" data-target="#modalIMG" data-toggle="modal" class="color-gray-darker c6 td-hover-none">
+                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                            aria-label="Placeholder: Thumbnail">
+                            <img src=".\public\images\img-8.jpg" id="video-btn" alt="Cinque Terre" width="500"
+                                height="300" class="video-btn" data-toggle="modal"
+                                data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-target="#video1">
+                        </svg>
+                    </a>
+
+                    <div class="modal fade" id="video1" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <!-- 16:9 aspect ratio -->
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="" id="video"
+                                            allowscriptaccess="always" allow="autoplay">
+                                        </iframe>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -64,39 +79,40 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-10 mt-3 ml-5">
-        <div
-            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-success">Video 2 - Working</strong>
-                {{!-- <h3 class="mb-0">Post title</h3> --}}
-                {{!-- <div class="mb-1 text-muted">Nov 11</div> --}}
-                <p class="mb-auto">Working</p>
-                {{!-- <a href="#" class="stretched-link">Continue reading</a> --}}
-            </div>
-            <div class="col-auto d-none d-lg-block">
-                <a href="#" data-target="#modalIMG" data-toggle="modal" class="color-gray-darker c6 td-hover-none">
-                    <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-                        <img src=".\public\images\img-8.jpg" id="video-btn" alt="Cinque Terre" width="500" height="300"
-                            class="video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/kw4tT7SCmaY"
-                            data-target="#video1">
-                    </svg>
-                </a>
-            
-                <div class="modal fade" id="video1" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <!-- 16:9 aspect ratio -->
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
-                                        allow="autoplay">
-                                    </iframe>
+        <div class="col-md-10 mt-3 ml-5">
+            <div
+                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">Video 2 - Working</strong>
+                    {{!-- <h3 class="mb-0">Post title</h3> --}}
+                    {{!-- <div class="mb-1 text-muted">Nov 11</div> --}}
+                    <p class="mb-auto">Working</p>
+                    {{!-- <a href="#" class="stretched-link">Continue reading</a> --}}
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <a href="#" data-target="#modalIMG" data-toggle="modal" class="color-gray-darker c6 td-hover-none">
+                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                            aria-label="Placeholder: Thumbnail">
+                            <img src=".\public\images\img-8.jpg" id="video-btn" alt="Cinque Terre" width="500"
+                                height="300" class="video-btn" data-toggle="modal"
+                                data-src="https://www.youtube.com/embed/kw4tT7SCmaY" data-target="#video1">
+                        </svg>
+                    </a>
+
+                    <div class="modal fade" id="video1" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <!-- 16:9 aspect ratio -->
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="" id="video"
+                                            allowscriptaccess="always" allow="autoplay">
+                                        </iframe>
+                                    </div>
                                 </div>
                             </div>
                         </div>
