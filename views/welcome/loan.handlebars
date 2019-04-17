@@ -28,36 +28,31 @@
                         type="submit">Logout</button></a>
             </div>
         </nav>
-        <form id="expenses-form" method="POST" action="/expenses">
+        <form id="loaninfo-form" method="POST" action="/loaninfo">
             {{#if alertMsg}}
             <p class="alertMsg">{{alertMsg}}</p>
             {{/if }}
             <div class="card border-primary mb-3 mx-auto">
-                <div class="card-header bg-dark text-font-white">Add expenses</div>
+                <div class="card-header bg-dark text-font-white">Add Loan</div>
                 <div class="card-body text-primary">
                     {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
 
-                    <div class="dropdown">
-                        <div class="d-inline text-font-black">Category:</div>
-                        {{!-- <button class="btn btn-smd btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown button
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> --}}
-                            <select id="category" name="category" class="form-control btn-primary col-10" required>
-                                <option value="">Taxes</option>
-                                <option value="Gold">Education</option>
-                                <option value="Platinum">Accomodation</option>
-                                <option value="Diamond">Utilities</option>
-                                <option value="Silver">Transport</option>
-                            </select>
+                    {{!-- <div class="dropdown">
+                        <div class="d-inline text-font-black">Bank</div>
+                        <select id="bankname" name="bankname" class="form-control btn-primary col-10 mt-2 mb-2"
+                            required>
+                            <option value="">BoFA</option>
+                            <option value="Gold">Chase</option>
+                            <option value="Platinum">Wells Fargo</option>
+                            <option value="Diamond">TD</option>
+                        </select> --}}
                         {{!-- </div> --}}
-                    </div>
-                    <div class="d-inline text-font-black">Title:</div>
-                    <input type="text" class="form-control col-10" name="title" id="title"
+                    
+                    <div class="d-inline text-font-black">Amount Due</div>
+                    <input type="text" class="form-control col-10 mt-2" name="amountdue" id="amountdue"
                         aria-describedby="basic-addon3">
 
-                    <div class="d-inline text-font-black">Amount:</div>
+                    {{!-- <div class="d-inline text-font-black">Amount:</div>
                     <input type="text" class="form-control col-10" name="amount" id="amount"
                         aria-describedby="basic-addon3">
 
@@ -71,15 +66,15 @@
 
                     <div class="d-inline text-font-black">Comments:</div>
                     <input type="text" class="form-control col-10" name="comments" id="comments"
-                        aria-describedby="basic-addon3">
+                        aria-describedby="basic-addon3"> --}}
 
                 </div>
                 <div class="modal-footer bg-dark">
-                    <a href="./expenses"><button type="submit" name="addnewexpenses" id="addnewexpenses"
-                            class="btn btn-secondary">Add New Expenses</button></a>
-                    <a href="./bankdetails"><button type="button" name="previous" id="previous" class="btn btn-secondary"
-                        data-dismiss="modal">Previous</button></a>
-                    <a href="./creditcardinfo"><button type="button" name="next" id="next" class="btn btn-primary">Next</button></a>
+                    {{!-- <a href="./creditcardinfo"><button type="submit" name="addnewexpenses" id="addnewexpenses"
+                            class="btn btn-secondary">Add New Card</button></a> --}}
+                    <a href="./creditcardinfo"><button type="button" name="previous" id="previous" class="btn btn-secondary"
+                            data-dismiss="modal">Previous</button></a>
+                    <button type="button" name="next" id="next" class="btn btn-primary">Next</button>
                 </div>
         </form>
     </div>
