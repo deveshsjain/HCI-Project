@@ -35,45 +35,25 @@
             <div class="card border-primary mb-3 mx-auto">
                 <div class="card-header bg-dark text-font-white">Add Credit card</div>
                 <div class="card-body text-primary">
-                    {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
-
                     <div class="dropdown">
                         <div class="d-inline text-font-black">Bank</div>
                         <select id="bankname" name="bankname" class="form-control btn-primary col-10 mt-2 mb-2" required>
-                            <option value="">BoFA</option>
-                            <option value="Gold">Chase</option>
-                            <option value="Platinum">Wells Fargo</option>
-                            <option value="Diamond">TD</option>
+                            <option value="BOFA">BoFA</option>
+                            <option value="Chase">Chase</option>
+                            <option value="Wells Fargo">Wells Fargo</option>
+                            <option value="TD">TD</option>
                         </select>
-                        {{!-- </div> --}}
                     </div>
                     <div class="d-inline text-font-black">Amount Due</div>
                     <input type="text" class="form-control col-10 mt-2" name="amountdue" id="amountdue"
                         aria-describedby="basic-addon3">
-
-                    {{!-- <div class="d-inline text-font-black">Amount:</div>
-                    <input type="text" class="form-control col-10" name="amount" id="amount"
-                        aria-describedby="basic-addon3">
-
-                    <div class="d-inline text-font-black">Mode of Payment:</div>
-                    <input type="text" class="form-control col-10" name="modeofpayment" id="modeofpayment"
-                        aria-describedby="basic-addon3">
-
-                    <div class="d-inline text-font-black">Date:</div>
-                    <input type="date" class="form-control col-10" name="date" id="date"
-                        aria-describedby="basic-addon3">
-
-                    <div class="d-inline text-font-black">Comments:</div>
-                    <input type="text" class="form-control col-10" name="comments" id="comments"
-                        aria-describedby="basic-addon3"> --}}
-
                 </div>
                 <div class="modal-footer bg-dark">
                     <a href="./creditcardinfo"><button type="submit" name="addnewexpenses" id="addnewexpenses"
                             class="btn btn-secondary">Add New Card</button></a>
                     <a href="./expenses"><button type="button" name="previous" id="previous"
                             class="btn btn-secondary" data-dismiss="modal">Previous</button></a>
-                    <a href="./loan"><button type="button" name="next" id="next" class="btn btn-primary">Next</button></a>
+                   <button type="submit" name="next" id="next" onclick="window.location.href='/loan'" class="btn btn-primary">Next</button></a>
                 </div>
         </form>
     </div>

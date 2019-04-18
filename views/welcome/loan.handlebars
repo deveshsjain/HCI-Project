@@ -28,53 +28,24 @@
                         type="submit">Logout</button></a>
             </div>
         </nav>
-        <form id="loaninfo-form" method="POST" action="/loaninfo">
+        <form id="loaninfo-form" method="POST" action="/loan">
             {{#if alertMsg}}
             <p class="alertMsg">{{alertMsg}}</p>
             {{/if }}
             <div class="card border-primary mb-3 mx-auto">
                 <div class="card-header bg-dark text-font-white">Add Loan</div>
                 <div class="card-body text-primary">
-                    {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
-
-                    {{!-- <div class="dropdown">
-                        <div class="d-inline text-font-black">Bank</div>
-                        <select id="bankname" name="bankname" class="form-control btn-primary col-10 mt-2 mb-2"
-                            required>
-                            <option value="">BoFA</option>
-                            <option value="Gold">Chase</option>
-                            <option value="Platinum">Wells Fargo</option>
-                            <option value="Diamond">TD</option>
-                        </select> --}}
-                        {{!-- </div> --}}
-                    
+                    <div class="d-inline text-font-black">Category</div>
+                    <input type="text" class="form-control col-10 mt-2" name="category" id="category"
+                        aria-describedby="basic-addon3">
                     <div class="d-inline text-font-black">Amount Due</div>
                     <input type="text" class="form-control col-10 mt-2" name="amountdue" id="amountdue"
                         aria-describedby="basic-addon3">
-
-                    {{!-- <div class="d-inline text-font-black">Amount:</div>
-                    <input type="text" class="form-control col-10" name="amount" id="amount"
-                        aria-describedby="basic-addon3">
-
-                    <div class="d-inline text-font-black">Mode of Payment:</div>
-                    <input type="text" class="form-control col-10" name="modeofpayment" id="modeofpayment"
-                        aria-describedby="basic-addon3">
-
-                    <div class="d-inline text-font-black">Date:</div>
-                    <input type="date" class="form-control col-10" name="date" id="date"
-                        aria-describedby="basic-addon3">
-
-                    <div class="d-inline text-font-black">Comments:</div>
-                    <input type="text" class="form-control col-10" name="comments" id="comments"
-                        aria-describedby="basic-addon3"> --}}
-
                 </div>
                 <div class="modal-footer bg-dark">
-                    {{!-- <a href="./creditcardinfo"><button type="submit" name="addnewexpenses" id="addnewexpenses"
-                            class="btn btn-secondary">Add New Card</button></a> --}}
-                    <a href="./creditcardinfo"><button type="button" name="previous" id="previous" class="btn btn-secondary"
-                            data-dismiss="modal">Previous</button></a>
-                    <button type="button" name="next" id="next" class="btn btn-primary">Next</button>
+                    <a href="./creditcardinfo"><button type="button" name="previous" id="previous"
+                            class="btn btn-secondary" data-dismiss="modal">Previous</button></a>
+                    <button type="submit" name="next" id="next" onclick="window.location.href='/bankdetails'" class="btn btn-primary">Next</button>
                 </div>
         </form>
     </div>

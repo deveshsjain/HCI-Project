@@ -35,23 +35,15 @@
             <div class="card border-primary mb-3 mx-auto">
                 <div class="card-header bg-dark text-font-white">Add expenses</div>
                 <div class="card-body text-primary">
-                    {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
-
                     <div class="dropdown">
                         <div class="d-inline text-font-black">Category:</div>
-                        {{!-- <button class="btn btn-smd btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown button
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> --}}
                             <select id="category" name="category" class="form-control btn-primary col-10" required>
-                                <option value="">Taxes</option>
-                                <option value="Gold">Education</option>
-                                <option value="Platinum">Accomodation</option>
-                                <option value="Diamond">Utilities</option>
-                                <option value="Silver">Transport</option>
+                                <option value="Taxes">Taxes</option>
+                                <option value="Education">Education</option>
+                                <option value="Accomodation">Accomodation</option>
+                                <option value="Utilities">Utilities</option>
+                                <option value="Transport">Transport</option>
                             </select>
-                        {{!-- </div> --}}
                     </div>
                     <div class="d-inline text-font-black">Title:</div>
                     <input type="text" class="form-control col-10" name="title" id="title"
@@ -75,11 +67,11 @@
 
                 </div>
                 <div class="modal-footer bg-dark">
-                    <a href="/expenses"><button type="submit" name="addnewexpenses" id="addnewexpenses"
+                    <a href="/expenses"><button type="button" name="addnewexpenses" id="addnewexpenses"
                             class="btn btn-secondary">Add New Expenses</button></a>
                     <a href="./bankdetails"><button type="button" name="previous" id="previous" class="btn btn-secondary"
                         data-dismiss="modal">Previous</button></a>
-                    <a href="./creditcardinfo"><button type="button" name="next" id="next" class="btn btn-primary">Next</button></a>
+                    <button type="submit" name="next" id="next" onclick="window.location.href='/creditcardinfo'" class="btn btn-primary">Next</button></a>
                 </div>
         </form>
     </div>

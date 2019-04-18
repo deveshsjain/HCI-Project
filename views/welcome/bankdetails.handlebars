@@ -36,8 +36,6 @@
             <div class="card border-primary mb-3 mx-auto">
                 <div class="card-header bg-dark text-font-white">Add Bank Account</div>
                 <div class="card-body text-primary">
-                    {{!-- <h5 class="card-title">Add Bank Account</h5> --}}
-
                     <div class="d-inline text-font-black">Account Type:</div>
                     <input type="text" name="accounttype" id="accounttype" class="form-control col-10 mt-2"
                         id="basic-url" aria-describedby="basic-addon3">
@@ -55,9 +53,9 @@
                         id="basic-url" aria-describedby="basic-addon3">
                 </div>
                 <div class="modal-footer bg-dark">
-                    <a href="/bankdetails"><button type="submit" name="addnewaccount" id="addnewaccount"
-                            class="btn btn-secondary">Add New Account</button></a>
-                    <a href="/expenses"><button type="button" name="ok" id="ok" class="btn btn-primary">OK</button></a>
+                    <a href="/bankdetails"><button type="button" formaction = "/bankdetails" name="addnewaccount" id="addnewaccount"
+                            class="btn btn-secondary">Add New Account</button></a>             
+                    <button type="submit" name="ok" id="ok" onclick="window.location.href='/expenses'" class="btn btn-primary">NEXT</button></a>
         </form>
     </div>
 </article>

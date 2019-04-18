@@ -5,7 +5,7 @@ const bankdetails = require("./bankdetails");
 const expenses = require("./expenses")
 const dashboard = require("./dashboard")
 const creditcardinfo = require("./creditcardinfo")
-const loan = require("./loan")
+const loandetails = require("./loan")
 
 const constructorMethod = app => {
 
@@ -15,10 +15,11 @@ const constructorMethod = app => {
   try {
     app.use("/", homeRoutes);
     app.use("/bankdetails", bankdetails);
+    app.use("/bankdetails/add", bankdetails);
     app.use("/expenses", expenses);
     app.use("/dashboard", dashboard);
     app.use("/creditcardinfo", creditcardinfo);
-    app.use("/loan", loan);
+    app.use("/loan", loandetails);
   }
   catch (error) {
     console.log(error);

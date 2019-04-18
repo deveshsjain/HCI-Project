@@ -99,7 +99,7 @@ router.post("/",async (req, res) => {
             return;
         }
         await expensesData.addExpensesDetails(category, title, amount, modeofpayment, date, comments);
-        res.redirect("/expenses");
+        res.redirect("/creditcardinfo");
 
     } catch (error) {
         res.render("welcome/expenses", {

@@ -35,7 +35,6 @@ router.get('/', userAuth,async (req, res) => {
         console.log(error);
         res.clearCookie("authCookie");
         res.status(403).render('error', {
-            // layout: "index",
             title: "Error",
             error: error
         });
@@ -47,7 +46,6 @@ router.post("/",async (req, res) => {
     try {
        
         let bankdetails = req.body;
-        console.log(bankdetails);
         let accounttype = xss(bankdetails.accounttype);
         let bankname = xss(bankdetails.bankname);
         let amount = xss(bankdetails.amount);
@@ -83,7 +81,7 @@ router.post("/",async (req, res) => {
             return;
         }
         await bankdetailsData.addBankDetails(accounttype, bankname, amount, accountopendate);
-        res.redirect("/bankdetails");
+        res.redirect("/expenses");
 
     } catch (error) {
         res.render("welcome/bankdetails", {
@@ -93,12 +91,6 @@ router.post("/",async (req, res) => {
     }
 });
 
-// router.get('/logout', function (req, res) {
-//     res.clearCookie("authCookie");
-//     res.render("logout", {
-//         layout: "index",
-//         title: "Logout"
-//     });
-// });
+
 
 module.exports = router;
