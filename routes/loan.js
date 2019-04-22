@@ -32,7 +32,6 @@ router.get('/', userAuth,async (req, res) => {
             title: "loan",
         });
     } catch (error) {
-        console.log(error);
         res.clearCookie("authCookie");
         res.status(403).render('error', {
             title: "Error",
@@ -46,7 +45,6 @@ router.post("/",async (req, res) => {
     try {
        
         let loandetails = req.body;
-        console.log(loandetails);
         let category = xss(loandetails.category);
         let amountdue = xss(loandetails.amountdue);
 
@@ -83,7 +81,6 @@ router.post("/add",async (req, res) => {
     try {
        
         let loandetails = req.body;
-        console.log(loandetails);
         let category = xss(loandetails.category);
         let amountdue = xss(loandetails.amountdue);
 
