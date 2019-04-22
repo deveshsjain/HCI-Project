@@ -1,9 +1,45 @@
 <article>
     <div class="bg-light">
-        <p>Welcome to the dashboard!"</p>
-        <a href="/Logout">Logout</a>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="http://localhost:3000">Budget Tracker</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./howitworks">How it works</a>
+                    </li>
+                </ul>
+                {{#if error}}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {{/if}}
+                {{#if logoutMsg}}
+                <div class="alert alert-success" role="alert">
+                    {{logoutMsg}}
+                </div>
+                {{/if}}
+                <a href="/Logout"><button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
+                        type="submit">Logout</button></a>
+            </div>
+        </nav>
+        {{!-- <p>Welcome to the dashboard!"</p> --}}
+        {{!-- <a href="/Logout">Logout</a> --}}
 
         <div class="text-center">
+            <h3 class="mt-2">Welcome! Let's get started</h3>
+            <div>
+                <svg class="bd-placeholder-img mt-2" width="100" height="300" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                    aria-label="Placeholder: Thumbnail">
+                    <img src=".\public\images\welcome1.jpg" alt="Cinque Terre" width="700" height="400">
+                </svg>
+            </div>
             <a href="/bankdetails"><button type="button" name="createbudget" id="createbudget" class="animatedbutton"
                     data-dismiss="modal">Create
                     Budget</button></a>
