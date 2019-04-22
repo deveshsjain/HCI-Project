@@ -6,7 +6,7 @@ const expenses = require("./expenses")
 const dashboard = require("./dashboard")
 const creditcardinfo = require("./creditcardinfo")
 const loandetails = require("./loan")
-
+const viewbudget = require("./viewBudget")
 const constructorMethod = app => {
 
   app.use(cookieParser());
@@ -23,6 +23,7 @@ const constructorMethod = app => {
     app.use("/creditcardinfo/add", creditcardinfo);
     app.use("/loan", loandetails);
     app.use("/loan/add", loandetails);
+    app.use("/viewBudget", viewbudget);
   }
   catch (error) {
     console.log(error);
