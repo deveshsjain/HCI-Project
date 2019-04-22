@@ -17,9 +17,12 @@ const constructorMethod = app => {
     app.use("/bankdetails", bankdetails);
     app.use("/bankdetails/add", bankdetails);
     app.use("/expenses", expenses);
+    app.use("/expenses/add", expenses);
     app.use("/dashboard", dashboard);
     app.use("/creditcardinfo", creditcardinfo);
+    app.use("/creditcardinfo/add", creditcardinfo);
     app.use("/loan", loandetails);
+    app.use("/loan/add", loandetails);
   }
   catch (error) {
     console.log(error);

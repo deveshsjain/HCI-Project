@@ -109,5 +109,71 @@ router.post("/",async (req, res) => {
     }
 });
 
+router.post("/add",async (req, res) => {
+   
+    try {
+       
+        let expenses = req.body;
+        console.log(expenses);
+        let category = xss(expenses.category);
+        let title = xss(expenses.title);
+        let amount = xss(expenses.amount);
+        let modeofpayment = xss(expenses.modeofpayment);
+        let date = xss(expenses.date);
+        let comments = xss(expenses.comments);
+
+        if (!category) {
+            res.render("welcome/expenses", {
+                alertMsg: "Please provide category",
+                title: "expenses"  , 
+            });
+            return;
+        }
+        if (!title) {
+            res.render("welcome/expenses", {
+                alertMsg: "Please provide title",
+                title: "expenses"  , 
+            });
+            return;
+        }
+        if (!amount) {
+            res.render("welcome/expenses", {
+                alertMsg: "Please provide amount",
+                title: "expenses"  , 
+            });
+            return;
+        }
+        if (!modeofpayment) {
+            res.render("welcome/expenses", {
+                alertMsg: "Please provide modeofpayment",
+                title: "expenses"  , 
+            });
+            return;
+        }
+        if (!date) {
+            res.render("welcome/expenses", {
+                alertMsg: "Please provide date",
+                title: "expenses"  , 
+            });
+            return;
+        }
+        if (!comments) {
+            res.render("welcome/expenses", {
+                alertMsg: "Please provide comments",
+                title: "expenses"  , 
+            });
+            return;
+        }
+        await expensesData.addExpensesDetails(category, title, amount, modeofpayment, date, comments);
+        res.redirect("/expenses");
+
+    } catch (error) {
+        res.render("welcome/expenses", {
+            alertMsg: "error while adding expenses",
+            title:"expenses"
+        });
+    }
+});
+
 
 module.exports = router;

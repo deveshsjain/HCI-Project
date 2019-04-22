@@ -92,7 +92,7 @@ router.post("/",async (req, res) => {
 
     
 });
-router.post("/bankdetails/add",async (req, res) => {
+router.post("/add",async (req, res) => {
    
     try {
        

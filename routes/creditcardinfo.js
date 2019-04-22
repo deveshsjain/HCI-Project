@@ -76,4 +76,39 @@ router.post("/",async (req, res) => {
     }
 });
 
+router.post("/add",async (req, res) => {
+   
+    try {
+       
+        let creditcardInfo = req.body;
+        console.log(creditcardInfo);
+        let bankname = xss(creditcardInfo.bankname);
+        let amountdue = xss(creditcardInfo.amountdue);
+
+        if (!bankname) {
+            res.render("welcome/creditcardinfo", {
+                alertMsg: "Please provide bankname",
+                title: "creditCardInfo"  , 
+            });
+            return;
+        }
+        if (!amountdue) {
+            res.render("welcome/creditcardinfo", {
+                alertMsg: "Please provide amountdue",
+                title: "creditCardInfo"  , 
+            });
+            return;
+        }
+        
+        await creditCardData.addCreditCardDetails(bankname, amountdue);
+        res.redirect("/creditcardinfo");
+
+    } catch (error) {
+        res.render("welcome/creditcardinfo", {
+            alertMsg: "error while adding creditcard details",
+            title:"creditCardInfo"
+        });
+    }
+});
+
 module.exports = router;

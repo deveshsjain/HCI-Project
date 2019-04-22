@@ -78,6 +78,43 @@ router.post("/",async (req, res) => {
     }
 });
 
+router.post("/add",async (req, res) => {
+   
+    try {
+       
+        let loandetails = req.body;
+        console.log(loandetails);
+        let category = xss(loandetails.category);
+        let amountdue = xss(loandetails.amountdue);
+
+  
+
+        if (!category) {
+            res.render("welcome/loan", {
+                alertMsg: "Please provide category",
+                title: "loan"  , 
+            });
+            return;
+        }
+        if (!amountdue) {
+            res.render("welcome/loan", {
+                alertMsg: "Please provide amount",
+                title: "loan"  , 
+            });
+            return;
+        }
+        
+        await loanData.addLoanDetails(category, amountdue);
+        res.redirect("/loan");
+
+    } catch (error) {
+        res.render("welcome/loan", {
+            alertMsg: "error while adding loan",
+            title:"loan"
+        });
+    }
+});
+
 module.exports = router;
 
 
