@@ -32,7 +32,6 @@ router.get('/', userAuth,async (req, res) => {
             title: "bankdetails",
         });
     } catch (error) {
-        console.log(error);
         res.clearCookie("authCookie");
         res.status(403).render('error', {
             title: "Error",
@@ -97,7 +96,6 @@ router.post("/add",async (req, res) => {
     try {
        
         let bankdetails = req.body;
-        console.log("INSIDE ADD" + bankdetails)
         let accounttype = xss(bankdetails.accounttype);
         let bankname = xss(bankdetails.bankname);
         let amount = xss(bankdetails.amount);

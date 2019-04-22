@@ -32,10 +32,8 @@ router.get('/', userAuth,async (req, res) => {
             title: "expenses",
         });
     } catch (error) {
-        console.log(error);
         res.clearCookie("authCookie");
         res.status(403).render('error', {
-            // layout: "index",
             title: "Error",
             error: error
         });
@@ -48,7 +46,6 @@ router.post("/",async (req, res) => {
     try {
        
         let expenses = req.body;
-        console.log(expenses);
         let category = xss(expenses.category);
         let title = xss(expenses.title);
         let amount = xss(expenses.amount);
@@ -114,7 +111,6 @@ router.post("/add",async (req, res) => {
     try {
        
         let expenses = req.body;
-        console.log(expenses);
         let category = xss(expenses.category);
         let title = xss(expenses.title);
         let amount = xss(expenses.amount);

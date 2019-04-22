@@ -32,7 +32,6 @@ router.get('/', userAuth,async (req, res) => {
             title: "creditCardInfo",
         });
     } catch (error) {
-        console.log(error);
         res.clearCookie("authCookie");
         res.status(403).render('error', {
             title: "Error",
@@ -46,7 +45,6 @@ router.post("/",async (req, res) => {
     try {
        
         let creditcardInfo = req.body;
-        console.log(creditcardInfo);
         let bankname = xss(creditcardInfo.bankname);
         let amountdue = xss(creditcardInfo.amountdue);
 
@@ -81,7 +79,6 @@ router.post("/add",async (req, res) => {
     try {
        
         let creditcardInfo = req.body;
-        console.log(creditcardInfo);
         let bankname = xss(creditcardInfo.bankname);
         let amountdue = xss(creditcardInfo.amountdue);
 

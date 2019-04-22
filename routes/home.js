@@ -51,7 +51,6 @@ router.post('/home', async function (req, res) {
       }
     } catch (error) {
       res.status(500).render('welcome/home', {
-        // layout: 'index',
         title: "error",
         error: error
       });
@@ -63,7 +62,6 @@ router.post('/home', async function (req, res) {
     res.clearCookie("authCookie");
     res.clearCookie("userId");
     res.render("welcome/home", {
-      // layout: "index",
       title: "login",
       logoutMsg: "You are successfully logged out ! "
     });
