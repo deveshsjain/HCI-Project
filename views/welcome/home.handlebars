@@ -27,9 +27,9 @@
                 <div>
                     <form class="form-inline my-2 my-lg-0" id="login-form" method="POST" action="/home">
                         <input class="form-control mr-sm-2" name="username" id="username" type="Username"
-                            placeholder="Username" aria-label="Search">
+                            placeholder="Username" aria-label="Search" required>
                         <input class="form-control mr-sm-2" name="password" id="password" type="Password"
-                            placeholder="Password" aria-label="Search">
+                            placeholder="Password" aria-label="Search" required>
                         <button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
                             type="submit">Login</button>
                     </form>
@@ -39,6 +39,7 @@
                         data-toggle="modal" data-target="#modalRegisterForm">SignUp</button>
 
                     <!-- Modal -->
+                   
                     <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog"
                         aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -71,6 +72,7 @@
                             </div>
                         </div>
                     </div>
+                   
         </nav>
 
         <div class="col-md-10 mt-3 ml-5">

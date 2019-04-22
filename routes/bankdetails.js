@@ -89,8 +89,59 @@ router.post("/",async (req, res) => {
             title:"bankdetails"
         });
     }
+
+    
 });
+router.post("/bankdetails/add",async (req, res) => {
+   
+    try {
+       
+        let bankdetails = req.body;
+        console.log("INSIDE ADD" + bankdetails)
+        let accounttype = xss(bankdetails.accounttype);
+        let bankname = xss(bankdetails.bankname);
+        let amount = xss(bankdetails.amount);
+        let accountopendate = xss(bankdetails.accountopendate);
+  
 
+        if (!accounttype) {
+            res.render("welcome/bankdetails", {
+                alertMsg: "Please provide account type",
+                title: "bankdetails"  , 
+            });
+            return;
+        }
+        if (!bankname) {
+            res.render("welcome/bankdetails", {
+                alertMsg: "Please provide bankname",
+                title: "bankdetails"  , 
+            });
+            return;
+        }
+        if (!amount) {
+            res.render("welcome/bankdetails", {
+                alertMsg: "Please provide amount",
+                title: "bankdetails"  , 
+            });
+            return;
+        }
+        if (!accountopendate) {
+            res.render("welcomebankdetails", {
+                alertMsg: "Please provide account open date",
+                title: "bankdetails"  , 
+            });
+            return;
+        }
+        await bankdetailsData.addBankDetails(accounttype, bankname, amount, accountopendate);
+        res.redirect("/bankDetails");
 
+    } catch (error) {
+        res.render("welcome/bankdetails", {
+            alertMsg: "error while adding bankdetails",
+            title:"bankdetails"
+        });
+    }
+
+});
 
 module.exports = router;

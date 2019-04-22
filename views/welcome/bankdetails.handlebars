@@ -38,23 +38,22 @@
                 <div class="card-body text-primary">
                     <div class="d-inline text-font-black">Account Type:</div>
                     <input type="text" name="accounttype" id="accounttype" class="form-control col-10 mt-2"
-                        id="basic-url" aria-describedby="basic-addon3">
+                        id="basic-url" aria-describedby="basic-addon3" required>
 
                     <div class="d-inline text-font-black">Bank Name:</div>
                     <input type="text" name="bankname" id="bankname" class="form-control col-10 mt-2" id="basic-url"
-                        aria-describedby="basic-addon3">
+                        aria-describedby="basic-addon3" required>
 
                     <div class="d-inline text-font-black">Amount:</div>
                     <input type="text" name="amount" id="amount" class="form-control col-10 mt-2" id="basic-url"
-                        aria-describedby="basic-addon3">
+                        aria-describedby="basic-addon3" required>
 
                     <div class="d-inline text-font-black">Account Open Date:</div>
                     <input type="date" name="accountopendate" id="accountopendate" class="form-control col-10 mt-2"
-                        id="basic-url" aria-describedby="basic-addon3">
+                        id="basic-url" aria-describedby="basic-addon3" required>
                 </div>
                 <div class="modal-footer bg-dark">
-                    <a href="/bankdetails"><button type="button" formaction = "/bankdetails" name="addnewaccount" id="addnewaccount"
-                            class="btn btn-secondary">Add New Account</button></a>             
+                   <button type="button"  name="addnewaccount" id="addnewaccount" onclick="window.location.href='/bankdetails/add'" class="btn btn-secondary">Add New Account</button>            
                     <button type="submit" name="ok" id="ok" onclick="window.location.href='/expenses'" class="btn btn-primary">NEXT</button></a>
         </form>
     </div>

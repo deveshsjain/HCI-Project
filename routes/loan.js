@@ -47,8 +47,8 @@ router.post("/",async (req, res) => {
        
         let loandetails = req.body;
         console.log(loandetails);
-        let category = xss(bankdetails.category);
-        let amountdue = xss(bankdetails.amountdue);
+        let category = xss(loandetails.category);
+        let amountdue = xss(loandetails.amountdue);
 
   
 
