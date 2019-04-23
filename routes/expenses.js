@@ -44,7 +44,7 @@ router.get('/', userAuth,async (req, res) => {
 router.post("/",async (req, res) => {
    
     try {
-       
+       let userId=req.cookies.userId;
         let expenses = req.body;
         let category = xss(expenses.category);
         let title = xss(expenses.title);
@@ -96,6 +96,7 @@ router.post("/",async (req, res) => {
             return;
         }
         await expensesData.addExpensesDetails(category, title, amount, modeofpayment, date, comments);
+        await expensesData.addUserExpensesDetails(userId, category, title, amount, modeofpayment, date, comments)
         res.redirect("/creditcardinfo");
 
     } catch (error) {

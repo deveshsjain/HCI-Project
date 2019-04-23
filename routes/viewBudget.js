@@ -10,6 +10,9 @@ const xss = require("xss");
 
 
 router.get('/',async (req, res) => {
-res.render("welcome/viewBudget")
+    let userId=(req.cookies.userId)
+    console.log(userId)
+res.render("welcome/viewBudget",{ID: userId})
 });
+
 module.exports = router;

@@ -66,7 +66,7 @@ router.post("/",async (req, res) => {
         }
         
         await loanData.addLoanDetails(category, amountdue);
-        res.redirect("/bankdetails");
+        res.redirect("/viewBudget");
 
     } catch (error) {
         res.render("welcome/loan", {
@@ -102,7 +102,7 @@ router.post("/add",async (req, res) => {
         }
         
         await loanData.addLoanDetails(category, amountdue);
-        res.redirect("/loan");
+        res.redirect("/viewBudget");
 
     } catch (error) {
         res.render("welcome/loan", {

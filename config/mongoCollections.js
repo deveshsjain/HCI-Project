@@ -20,5 +20,6 @@ module.exports = {
   bankdetails: getCollectionFn("bankdetails"),
   expenses: getCollectionFn("expenses"),
   creditCardInfo: getCollectionFn("creditCardInfo"),
-  loandetails: getCollectionFn("loandetails")
+  loandetails: getCollectionFn("loandetails"),
+  userexpense: getCollectionFn("userexpense")
 };
