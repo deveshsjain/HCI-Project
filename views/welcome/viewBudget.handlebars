@@ -11,7 +11,7 @@
 
   // Draw the chart and set the chart values
   function drawChart() {
-    
+
     var data = google.visualization.arrayToDataTable([
       ['Category', 'AmountSpent'],
       ['Work', 8],
@@ -31,38 +31,70 @@
 </script>
 <p>{{ID}}</p> --}}
 
-<!DOCTYPE HTML>
-<html>
-<head>
-<script>
-window.onload = function() {
+<article>
+  <div class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="http://localhost:3000"><img src="./public/images/logo.jpg" alt="Budget Tracker" width="80" height="50"></a>
 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	title: {
-		text: "Desktop Search Engine Market Share - 2016"
-	},
-	data: [{
-		type: "pie",
-		startAngle: 240,
-		yValueFormatString: "##0.00\"%\"",
-		indexLabel: "{label} {y}",
-		dataPoints: [
-			{y: 79.45, label: "Google"},
-			{y: 7.31, label: "Bing"},
-			{y: 7.06, label: "Baidu"},
-			{y: 4.91, label: "Yahoo"},
-			{y: 1.26, label: "Others"}
-		]
-	}]
-});
-chart.render();
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-}
-</script>
-</head>
-<body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-</body>
-</html>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./howitworks">How it works</a>
+          </li>
+        </ul>
+        {{#if error}}
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+        {{/if}}
+        {{#if logoutMsg}}
+        <div class="alert alert-success" role="alert">
+          {{logoutMsg}}
+        </div>
+        {{/if}}
+        <a href="/Logout"><button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
+            type="submit">Logout</button></a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="col">
+    {{!-- <div class="card-deck"> --}}
+
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Light card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Light card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Light card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.
+        </p>
+      </div>
+    </div>
+    {{!-- </div> --}}
+  </div>
+</article>
