@@ -65,27 +65,27 @@ const exportedMethods = {
 
     },
 
-    async getUserExpenses(userid) {
-        if (!userid) throw "You must provide  userid to search for";
+    // async getUserExpenses(userid) {
+    //     if (!userid) throw "You must provide  userid to search for";
 
-        let ExpenseArray = [];
-        const userExpensesCollection = await userexpenses();
-        let expense = await userExpensesCollection.find({ userId: userid }).toArray();
+    //     let ExpenseArray = [];
+    //     const userExpensesCollection = await userexpenses();
+    //     let expense = await userExpensesCollection.find({ userId: userid }).toArray();
 
-        for (let i = 0; i < expense.length; i++) {
-            let category = expense[i].category;
-            // let title = expense[i].title;
+    //     for (let i = 0; i < expense.length; i++) {
+    //         let category = expense[i].category;
+    //         // let title = expense[i].title;
            
 
-            ExpenseArray.push(category);
+    //         ExpenseArray.push(category);
 
-        }
+    //     }
 
-        if (!ExpenseArray) throw "No expenses for the user";
-        else {
-            return ExpenseArray;
-        }
-    },
+    //     if (!ExpenseArray) throw "No expenses for the user";
+    //     else {
+    //         return ExpenseArray;
+    //     }
+    // },
 
   
 

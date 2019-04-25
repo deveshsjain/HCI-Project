@@ -12,9 +12,9 @@ const expensesData = data.expenses;
 
 router.get('/',async (req, res) => {
     let userId=(req.cookies.userId)
-    let expenses= await expensesData.getUserExpenses(userId);
+    //let expenses= await expensesData.getUserExpenses(userId);
     console.log(userId)
-res.render("welcome/viewBudget",{category: expenses})
+res.render("welcome/viewBudget")
 });
 
 module.exports = router;
