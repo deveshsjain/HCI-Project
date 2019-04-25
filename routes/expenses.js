@@ -96,7 +96,8 @@ router.post("/",async (req, res) => {
             return;
         }
         await expensesData.addExpensesDetails(category, title, amount, modeofpayment, date, comments);
-        await expensesData.addUserExpensesDetails(userId, category, title, amount, modeofpayment, date, comments)
+        await expensesData.addUserExpensesDetails(userId,expenseId);
+      
         res.redirect("/creditcardinfo");
 
     } catch (error) {

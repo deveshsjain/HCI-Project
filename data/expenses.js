@@ -59,10 +59,37 @@ const exportedMethods = {
 
         return {
             status: true,
-            addedexpense,
+            addeduserexpense,
             newId
         }
 
     },
+
+    async getUserExpenses(userid) {
+        if (!userid) throw "You must provide  userid to search for";
+
+        let ExpenseArray = [];
+        const userExpensesCollection = await userexpenses();
+        let expense = await userExpensesCollection.find({ userId: userid }).toArray();
+
+        for (let i = 0; i < expense.length; i++) {
+            let category = expense[i].category;
+            // let title = expense[i].title;
+           
+
+            ExpenseArray.push(category);
+
+        }
+
+        if (!ExpenseArray) throw "No expenses for the user";
+        else {
+            return ExpenseArray;
+        }
+    },
+
+  
+
 }
+
+
     module.exports = exportedMethods;
