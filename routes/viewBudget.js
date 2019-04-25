@@ -14,7 +14,7 @@ router.get('/',async (req, res) => {
     let userId=(req.cookies.userId)
     //let expenses= await expensesData.getUserExpenses(userId);
     console.log(userId)
-res.render("welcome/viewBudget")
+res.render("welcome/viewBudget", {ID: userId})
 });
 
 module.exports = router;
