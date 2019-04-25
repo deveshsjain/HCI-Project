@@ -81,14 +81,16 @@
               </tr>
             </thead>
             <tbody>
+              
               <tr>
-                <th scope="col">abc</th>
+                {{#each bankDetails}}
+                <th scope="col">{{this.accounttype}}</th>
                 <th scope="col">200</th>
                 <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit gym Member"
                       src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
                 <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delte Gym Member"
                       src="../../public/images/delete.jpg" height="20" width="20"></a></th>
-
+  {{/each}}
               </tr>
               <tr>
                 <th scope="col">abc</th>
