@@ -11,7 +11,7 @@
 
   // Draw the chart and set the chart values
   function drawChart() {
-    
+
     var data = google.visualization.arrayToDataTable([
       ['Category', 'AmountSpent'],
       ['Taxes', 8],
@@ -29,5 +29,152 @@
     chart.draw(data, options);
   }
 </script>
-<p>{{ID}}</p>
 
+<p>{{ID}}</p> --}}
+
+<article>
+  <div class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="http://localhost:3000"><img src="./public/images/logo.jpg" alt="Budget Tracker"
+          width="80" height="50"></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./howitworks">How it works</a>
+          </li>
+        </ul>
+        {{#if error}}
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+        {{/if}}
+        {{#if logoutMsg}}
+        <div class="alert alert-success" role="alert">
+          {{logoutMsg}}
+        </div>
+        {{/if}}
+        <a href="/Logout"><button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
+            type="submit">Logout</button></a>
+      </div>
+    </nav>
+
+
+    <div class="col">
+      {{!-- <div class="card-deck"> --}}
+
+      <div class="card bg-light mb-3" style="max-width: 22rem;">
+        <div class="card-header">Account Details</div>
+        <div class="card-body">
+          <table class="table" id="Account">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">abc</th>
+                <th scope="col">200</th>
+                <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit gym Member"
+                      src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delte Gym Member"
+                      src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+              </tr>
+              <tr>
+                <th scope="col">abc</th>
+                <th scope="col">200</th>
+                <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit gym Member"
+                      src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delte Gym Member"
+                      src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card bg-light mb-3" style="max-width: 22rem;">
+        <div class="card-header">Credit Card</div>
+        <div class="card-body">
+          <table class="table" id="Credit">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Bank</th>
+                <th scope="col">$ Due</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">abc</th>
+                <th scope="col">200</th>
+                <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit gym Member"
+                      src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delte Gym Member"
+                      src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+              </tr>
+              <tr>
+                <th scope="col">abc</th>
+                <th scope="col">200</th>
+                <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit gym Member"
+                      src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delte Gym Member"
+                      src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card bg-light mb-3" style="max-width: 22rem;">
+        <div class="card-header">Loans</div>
+        <div class="card-body">
+          <table class="table" id="Loans">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">$ Due</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">abc</th>
+                <th scope="col">200</th>
+                <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit gym Member"
+                      src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delte Gym Member"
+                      src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+              </tr>
+              <tr>
+                <th scope="col">abc</th>
+                <th scope="col">200</th>
+                <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit gym Member"
+                      src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delte Gym Member"
+                      src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
