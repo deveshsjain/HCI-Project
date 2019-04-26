@@ -43,7 +43,7 @@ router.get('/', userAuth,async (req, res) => {
 router.post("/",async (req, res) => {
    
     try {
-       let userId=req.cookies.userId;
+       
         let bankdetails = req.body;
         let accounttype = xss(bankdetails.accounttype);
         let bankname = xss(bankdetails.bankname);
@@ -80,7 +80,6 @@ router.post("/",async (req, res) => {
             return;
         }
         await bankdetailsData.addBankDetails(accounttype, bankname, amount, accountopendate);
-        await bankdetailsData.addUserAccountDetails(userId,accounttype, bankname, amount, accountopendate);
         res.redirect("/expenses");
 
     } catch (error) {
@@ -95,20 +94,14 @@ router.post("/",async (req, res) => {
 router.post("/add",async (req, res) => {
    
     try {
-       let userId = req.cookies.userId;
+       
         let bankdetails = req.body;
         let accounttype = xss(bankdetails.accounttype);
         let bankname = xss(bankdetails.bankname);
         let amount = xss(bankdetails.amount);
         let accountopendate = xss(bankdetails.accountopendate);
   
-        if (!userId) {
-            res.render("welcome/bankdetails", {
-                alertMsg: "Please provide userId",
-                title: "bankdetails"  , 
-            });
-            return;
-        }
+
         if (!accounttype) {
             res.render("welcome/bankdetails", {
                 alertMsg: "Please provide account type",

@@ -30,6 +30,7 @@ const exportedMethods = {
         }
 
     },
+
     async addUserAccountDetails(userId,accounttype, bankname, amount,accountopendate) {
         if (!userId) throw "No userId provided";
         if (!accounttype) throw "No accounttype provided";
@@ -66,21 +67,50 @@ const exportedMethods = {
         return getUserBank;
     },
 
-//     async getAllUserBankId(userid) {
-//         try {
-//         if (!userid) throw "You must provide  userid to search for";
+    async getAllUserBankId(userid) {
+        try {if (!userid) throw "You must provide  userid to search for";
  
-//          let bankArray = [];
-//          const userBankDetailsCollection = await userbankdetails();
-//          let userbank = await userBankDetailsCollection.find({ userId: userid }).toArray();
+         let bankArray = [];
+         const userBankDetailsCollection = await userbankdetails();
+         let userbank = await userBankDetailsCollection.find({ userId: userid }).toArray();
  
-//          for (let i = 0; i < userbank.length; i++) {
-//              let userBankDetails = userbank[i];
+         for (let i = 0; i < userbank.length; i++) {
+             let userBankDetails = userbank[i];
  
-//              userBankArray.push(userBankDetails);
+             userBankArray.push(userBankDetails);
  
-//          }
-//     return userBankArray;
- }
+         }
+    // async removeMembership(membershipId) {
+    //     if (!membershipId) throw "You must provide an id to delete";
+
+    //     const membershipCollection = await membership();
+
+    //     const removeMembership = await membershipCollection.removeOne({ _id: membershipId });
+
+    //     if (removeMembership.deletedCount === 0) {
+    //         throw `Could not delete membership with id: ${membershipId}`;
+    //     }
+    // },
+    // async updateMembership(membershipId,membershipname,membershipperiod,signupfees,services,description) {
+    //     if (!membershipId) throw "You must provide an id to update";
+    //     const membershipCollection = await membership(); 
     
-     module.exports = exportedMethods;
+    //     const updatedMembership = await membershipCollection.updateOne({ _id: membershipId }, 
+    //         {$set: 
+    //         {   membershipname: membershipname,
+    //             membershipperiod: membershipperiod,
+    //             signupfees: signupfees,
+    //             services: services,
+    //             description:description,
+
+    //         } 
+    //     });
+    //     return updatedMembership;
+    // },
+    
+} catch(e){
+        res.status(404).json({error: e});
+    }
+}
+}
+    module.exports = exportedMethods;

@@ -9,7 +9,8 @@
 
 html {
     height: 100%;
-    background: #f8f9fa; /* fallback for old browsers */
+    width: 100%;
+    background: black; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
 }
 
@@ -17,6 +18,153 @@ body {
     font-family: montserrat, arial, verdana;
     background: transparent;
 }
+
+.bg-light-viewBudget {
+    background-color: yellow;
+}
+
+.bg-light {
+    background-image: url("http://collegian.csufresno.edu/wp-content/uploads/2018/08/4k-vfx-assets-cigarette-smoke-incense-genie_sigt8ffq_thumbnail-full01.png");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.navbar-brand {
+    min-height: 55px;
+    padding: 0 15px 5px;
+}
+
+.row, .col {
+    background-image: url("https://st2.depositphotos.com/1888461/7666/i/950/depositphotos_76669773-stock-photo-white-grey-background-in-soft.jpg");
+    background-color: #fff9fe;
+}
+
+.bird {
+    background-image: url('https://ak4.picdn.net/shutterstock/videos/3781004/thumb/8.jpg');
+    opacity: 1;
+    background-size: cover;
+    width: 1500px;
+    height: 450px;
+    will-change: background-position;
+    
+    animation-name: fly-cycle;
+    animation-duration: 10s;
+    animation-delay: -0.50s;
+    animation-timing-function: steps(10);
+    animation-iteration-count: infinite;
+}
+
+@keyframes fly-cycle {
+    
+    100% {
+        background-position: -3600px 0;
+    }
+    
+}
+
+.dashboard-style { 
+    font: 400 1em/1.5 "Montserrat"; 
+    background: #090d00; 
+    color: rgba(255,255,255,.25); 
+    text-align: center; 
+    margin: 0 }
+
+.dash1 {
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    letter-spacing: .5em;
+    display: inline-block;
+    border: 4px double rgba(255,255,255,.25);
+    border-width: 4px 0;
+    padding: 1.5em 0em;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 40em;
+    margin: 0 0 0 -20em; }
+  
+.dash2 {
+
+    font: 700 4em/1 "Montserrat", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+      display: block;
+      margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+/* Clip Background Image */
+
+      background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
+      -webkit-background-clip: text;
+      background-clip: text;
+
+/* Animate Background Image */
+
+      -webkit-text-fill-color: transparent;
+      -webkit-animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+      -webkit-transform: translate3d(0,0,0);
+      -webkit-backface-visibility: hidden;
+
+  }
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.title {
+    font-family: "Montserrat";
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+.animation {
+    background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: .75;
+    margin: 10px 0;
+}
+/* styling my button */
+
+.white-mode {
+    text-decoration: none;
+    padding: 7px 10px;
+    background-color: #122;
+    border-radius: 3px;
+    color: #FFF;
+    transition: .35s ease-in-out;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-family: "Montserrat";
+}
+
+.white-mode:hover {
+    background-color: #FFF;
+    color: #122;
+}
+
 
 /*form styles*/
 #msform {
@@ -256,25 +404,8 @@ body {
   50% { background-color: #4863A0; box-shadow: 0 0 10px #4863A0; }
   100% { background-color: #4863A0; box-shadow: 0 0 3px #4863A0; }
 }
-
-#addOption{
-   text-align:right;
-   padding:0px;
-   margin:0px;
-   font-size:15px;
-
-}
-#addOption a{
-   color:black;
-   text-decoration: none;
-}
-#addOption img{
-   height:30px;
-}
-
-#editOption{
-   text-align:right;
-   padding:0px;
-   margin:0px;
-   font-size:15px;
+.nav-link{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 130%;
+  
 }

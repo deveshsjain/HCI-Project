@@ -47,7 +47,8 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block; }
+
+  display: block;  }
 
 body {
   margin: 0;
@@ -4603,6 +4604,7 @@ button.bg-danger:focus {
   background-color: #bd2130 !important; }
 
 .bg-light {
+  background-image: url("https://cdn.pixabay.com/photo/2016/04/25/23/53/euro-1353420_960_720.jpg");
   background-color: #f8f9fa !important; }
 
 a.bg-light:hover, a.bg-light:focus,
