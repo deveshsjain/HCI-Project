@@ -66,46 +66,21 @@ const exportedMethods = {
         return getUserBank;
     },
 
-    async getAllUserBankId(userid) {
-        try {if (!userid) throw "You must provide  userid to search for";
+//     async getAllUserBankId(userid) {
+//         try {
+//         if (!userid) throw "You must provide  userid to search for";
  
-         let bankArray = [];
-         const userBankDetailsCollection = await userbankdetails();
-         let userbank = await userBankDetailsCollection.find({ userId: userid }).toArray();
+//          let bankArray = [];
+//          const userBankDetailsCollection = await userbankdetails();
+//          let userbank = await userBankDetailsCollection.find({ userId: userid }).toArray();
  
-         for (let i = 0; i < userbank.length; i++) {
-             let userBankDetails = userbank[i];
+//          for (let i = 0; i < userbank.length; i++) {
+//              let userBankDetails = userbank[i];
  
-             userBankArray.push(userBankDetails);
+//              userBankArray.push(userBankDetails);
  
-         }
-    // async removeMembership(membershipId) {
-    //     if (!membershipId) throw "You must provide an id to delete";
-
-    //     const membershipCollection = await membership();
-
-    //     const removeMembership = await membershipCollection.removeOne({ _id: membershipId });
-
-    //     if (removeMembership.deletedCount === 0) {
-    //         throw `Could not delete membership with id: ${membershipId}`;
-    //     }
-    // },
-    // async updateMembership(membershipId,membershipname,membershipperiod,signupfees,services,description) {
-    //     if (!membershipId) throw "You must provide an id to update";
-    //     const membershipCollection = await membership(); 
+//          }
+//     return userBankArray;
+ }
     
-    //     const updatedMembership = await membershipCollection.updateOne({ _id: membershipId }, 
-    //         {$set: 
-    //         {   membershipname: membershipname,
-    //             membershipperiod: membershipperiod,
-    //             signupfees: signupfees,
-    //             services: services,
-    //             description:description,
-
-    //         } 
-    //     });
-    //     return updatedMembership;
-    // },
-    
-}
-    module.exports = exportedMethods;
+     module.exports = exportedMethods;
