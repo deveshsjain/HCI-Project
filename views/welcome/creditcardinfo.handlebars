@@ -1,7 +1,7 @@
 <article>
     <div class="bg-light">
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="http://localhost:3000"><img src="./public/images/logo.jpg" alt="Budget Tracker" width="80" height="50"></a>
+            <a class="navbar-brand" href="http://localhost:3000"><img src="./public/images/logo.jpg" alt="Budget Tracker" width="130" height="90"></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +12,9 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="./howitworks">How it works</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./aboutus">About Us</a>
                     </li>
                 </ul>
                 {{#if error}}
@@ -24,7 +27,7 @@
                     {{logoutMsg}}
                 </div>
                 {{/if}}
-                <a href="/Logout"><button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
+                <a href="/Logout"><button class="btn btn-outline-info my-2 my-sm-0 mr-3" name="login" id="login"
                         type="submit">Logout</button></a>
             </div>
         </nav>

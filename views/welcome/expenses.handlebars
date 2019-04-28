@@ -1,7 +1,7 @@
 <article>
     <div class="bg-light">
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="http://localhost:3000"><img src="./public/images/logo.jpg" alt="Budget Tracker" width="80" height="50"></a>
+            <a class="navbar-brand" href="http://localhost:3000"><img src="./public/images/logo.jpg" alt="Budget Tracker" width="130" height="90"></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +12,9 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="./howitworks">How it works</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./aboutus">About Us</a>
                     </li>
                 </ul>
                 {{#if error}}
@@ -24,7 +27,7 @@
                     {{logoutMsg}}
                 </div>
                 {{/if}}
-                <a href="/Logout"><button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
+                <a href="/Logout"><button class="btn btn-outline-info my-2 my-sm-0 mr-3" name="login" id="login"
                         type="submit">Logout</button></a>
             </div>
         </nav>
@@ -38,11 +41,14 @@
                     <div class="dropdown">
                         <div class="d-inline text-font-black">Category:</div>
                             <select id="category" name="category" class="form-control btn-primary col-10" required>
+                                <option value="Accomodation">Accomodation</option>
+                                <option value="Groceries">Groceries</option>
                                 <option value="Taxes">Taxes</option>
                                 <option value="Education">Education</option>
-                                <option value="Accomodation">Accomodation</option>
                                 <option value="Utilities">Utilities</option>
                                 <option value="Transport">Transport</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Vacation">Vacation</option>
                             </select>
                     </div>
                     <div class="d-inline text-font-black">Title:</div>
@@ -53,9 +59,14 @@
                     <input type="text" class="form-control col-10" name="amount" id="amount"
                         aria-describedby="basic-addon3">
 
-                    <div class="d-inline text-font-black">Mode of Payment:</div>
-                    <input type="text" class="form-control col-10" name="modeofpayment" id="modeofpayment"
-                        aria-describedby="basic-addon3">
+                    <div class="dropdown">
+                        <div class="d-inline text-font-black">Mode Of Payment:</div>
+                            <select id="modeofpayment" name="modeofpayment" class="form-control btn-primary col-10" required>
+                                <option value="Taxes">Credit Card</option>
+                                <option value="Education">Debit Card</option>
+                                <option value="Accomodation">Cash</option>
+                            </select>
+                    </div>
 
                     <div class="d-inline text-font-black">Date:</div>
                     <input type="date" class="form-control col-10" name="date" id="date"

@@ -1,6 +1,10 @@
 const bcrypt = require("bcrypt");
 const user = require("./user");
 const session = require("./session");
+const mongoCollections = require("../config/mongoCollections");
+const signupdetails = mongoCollections.signupdetails;
+const uuid = require('uuid/v1');
+
 
 let exportedMethods = {
 
@@ -42,7 +46,34 @@ let exportedMethods = {
             }
         }
     },
+
+
+    async addSignUpDetails(yourname, youremail, yourpassword) {
+
+        if (!yourname) throw "No name provided";
+        if (!youremail) throw "No username provided";
+        if (!yourpassword) throw "No password provided";
+       
+        const signUpDetailsCollection = await signupdetails();
+        const newDetails = {
+            _id: uuid(),
+            yourname: yourname,
+            youremail: youremail,
+            yourpassword: yourpassword         
+        };
+
+        const addeddetails = await signUpDetailsCollection.insertOne(newDetails);
+        const newId = addeddetails.insertedId;
+
+        return {
+            status: true,
+            addeddetails,
+            newId
+        }
+
+    },
     
 };
+
 
 module.exports = exportedMethods;

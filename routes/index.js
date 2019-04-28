@@ -7,8 +7,6 @@ const dashboard = require("./dashboard")
 const creditcardinfo = require("./creditcardinfo")
 const loandetails = require("./loan")
 const viewbudget = require("./viewBudget")
-const aboutus = require("./aboutUs")
-
 const constructorMethod = app => {
 
   app.use(cookieParser());
@@ -26,7 +24,6 @@ const constructorMethod = app => {
     app.use("/loan", loandetails);
     app.use("/loan/add", loandetails);
     app.use("/viewBudget", viewbudget);
-    app.use("/aboutus", aboutus);
   }
   catch (error) {
     console.log(error);

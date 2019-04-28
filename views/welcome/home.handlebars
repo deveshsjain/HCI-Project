@@ -36,17 +36,17 @@
                             placeholder="Username" aria-label="Search" required>
                         <input class="form-control mr-sm-2" name="password" id="password" type="Password"
                             placeholder="Password" aria-label="Search" required>
-                        <button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login"
+                        <button class="btn btn-outline-info my-2 my-sm-0" name="login" id="login"
                             type="submit">Login</button>
                     </form>
                 </div>
                 <div>
-                    <button class="btn btn-outline-success my-2 my-sm-0 ml-2" name="signup" id="signup"
+                    <button class="btn btn-outline-info my-2 my-sm-0 ml-2" name="signup" id="signup"
                         data-toggle="modal" data-target="#modalRegisterForm">SignUp</button>
 
                     <!-- Modal -->
-                   
-                    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog"
+                                    
+                        <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog"
                         aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -59,30 +59,30 @@
                                 <div class="modal-body mx-3">
                                     <div class="md-form mb-5">
                                         <i class="fas fa-user prefix grey-text"></i>
-                                        <input type="text" id="orangeForm-name" class="form-control validate" placeholder="Your name">
+                                        <input type="text" id="orangeForm-name" name = "yourname" class="form-control validate" placeholder="Your name">
                                     </div>
                                     <div class="md-form mb-5">
                                         <i class="fas fa-envelope prefix grey-text"></i>
-                                        <input type="email" id="orangeForm-email" class="form-control validate" placeholder="Your email">
+                                        <input type="email" name = "youremail" id="orangeForm-email" class="form-control validate" placeholder="Your email">
                                     </div>
 
                                     <div class="md-form mb-4">
                                         <i class="fas fa-lock prefix grey-text"></i>
-                                        <input type="password" id="orangeForm-pass" class="form-control validate" placeholder="Your password">
+                                        <input type="password" id="orangeForm-pass" name = "yourpassword" class="form-control validate" placeholder="Your password">
                                     </div>
 
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center">
-                                    <button class="btn btn-deep-orange">Sign up</button>
+                                    <button type = "button"  onclick="window.location.href='/dashboard'" class="btn btn-deep-orange">Sign up</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
             </nav>
-        
 
-        <div class="col-md-10 mt-3 ml-5">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="col-md-10 mx-auto mt-3">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1500">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -115,10 +115,10 @@
         
         </div>
         </div>
-        
 
-            
-        <div class="col-md-10 mt-3 ml-5">
+
+
+            <div class="col-md-10 mx-auto mt-3">
             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-success">What is Budgeting?</strong>
@@ -140,8 +140,7 @@
             </div>
         </div>
 
-
-        <div class="col-md-10 mt-3 ml-5">
+        <div class="col-md-10 mx-auto mt-3">
             <div
                 class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 
@@ -164,18 +163,13 @@
         </div>
 
         <div class="text-center">
-            <a align="center" href="#username"><button class="btn btn-outline-success my-2 my-sm-0" name="login" id="login" type="submit">Login</button></a>
-            <a href="#signup"><button class="btn btn-outline-success my-2 my-sm-0 ml-2" name="signup" id="signup"
+            <a align="center" href="#username"><button class="btn btn-outline-info my-2 my-sm-0" name="login" id="login" type="submit">Login</button></a>
+            <a href="#signup"><button class="btn btn-outline-info my-2 my-sm-0 ml-2" name="signup" id="signup"
                         data-toggle="modal" data-target="#modalRegisterForm">SignUp</button></a>
     </div>
-
-        <div class="title">
-        <br>
-        <p class="animation"><br/>budget tracker</p>
-        </div>
-
-        <br>
-        <br>
-
+    <div class="title">
+            <p class="animation"><br/>budget tracker</p>
+    </div>
+    <br>
     </div>
 </article>

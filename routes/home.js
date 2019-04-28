@@ -56,6 +56,8 @@ router.post('/home', async function (req, res) {
       });
     };
   });
+
+  
   router.get('/logout', async function (req, res) {
     let clientSessionId = req.cookies.authCookie;
     await session.deleteSession(clientSessionId);
@@ -68,6 +70,10 @@ router.post('/home', async function (req, res) {
   });
 router.get("/howitworks", (req, res) => {
     res.render('welcome/howitworks');
+});
+
+router.get("/aboutus", (req, res) => {
+    res.render('welcome/aboutus');
 });
 
 module.exports = router;
