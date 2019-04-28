@@ -35,42 +35,42 @@
 
     <br>
     <br>
-    <div class="container">
-      <div class="row-vb-piechart">
-        <div id="piechart"></div>
 
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div class="row ml-5">
+      <div id="piechart"></div>
 
-        <script type="text/javascript">
-          // Load google charts
-          google.charts.load('current', { 'packages': ['corechart'] });
-          google.charts.setOnLoadCallback(drawChart);
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-          // Draw the chart and set the chart values
-          function drawChart() {
+      <script type="text/javascript">
+        // Load google charts
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
 
-            var data = google.visualization.arrayToDataTable([
-              ['Category', 'AmountSpent'],
-              ['Accomodation', 450],
-              ['Vacation', 300],
-              ['Taxes', 800],
-              ['Education', 1000],
-              ['Utilities', 200],
-            ]);
+        // Draw the chart and set the chart values
+        function drawChart() {
 
-            // Optional; add a title and set the width and height of the chart
-            var options = { 'is3D': true, 'title': 'My Expenses', 'width': 550, 'height': 400, 'titleTextStyle':  {color: 'blue', fontSize: '200px'}, 'backgroundColor': 'white'};
+          var data = google.visualization.arrayToDataTable([
+            ['Category', 'AmountSpent'],
+            ['Accomodation', 450],
+            ['Vacation', 300],
+            ['Taxes', 800],
+            ['Education', 1000],
+            ['Utilities', 200],
+          ]);
 
-            // Display the chart inside the <div> element with id="piechart"
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-            chart.draw(data, options);
-          }
-        </script>
-      </div>
+          // Optional; add a title and set the width and height of the chart
+          var options = { 'is3D': true, 'title': 'My Expenses', 'width': 550, 'height': 400, 'titleTextStyle': { color: 'blue', fontSize: '200px' }, 'backgroundColor': 'white' };
 
-      <div class="row-vb">
-        <div class="col-4">
-          <div class="card bg-light mb-3" style="width: 20rem;">
+          // Display the chart inside the <div> element with id="piechart"
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      </script>
+    </div>
+
+    <div class="row">
+        <div class="col ml-5">
+          <div class="card bg-light mb-3" style="width: 20rem; height: 15rem">
             <div class="card-header">Account Details</div>
             <div class="card-body">
               <table class="table" id="Account">
@@ -105,7 +105,7 @@
             </div>
           </div>
 
-          <div class="card bg-light mb-3" style="width: 20rem;">
+          <div class="card bg-light mb-3" style="width: 20rem; height: 15rem">
             <div class="card-header">Credit Card</div>
             <div class="card-body">
               <table class="table" id="Credit">
@@ -141,7 +141,7 @@
             </div>
           </div>
 
-          <div class="card bg-light mb-3" style="width: 20rem;">
+          <div class="card bg-light mb-3" style="width: 20rem; height: 15rem">
             <div class="card-header">Loans</div>
             <div class="card-body">
               <table class="table" id="Loans">
@@ -176,86 +176,84 @@
               </table>
             </div>
           </div>
-        {{!-- </div> --}}
-      </div>
-
-      <div class="col-8">
-        <div class="card bg-light mb-3" style="width: 40rem;">
-          <div class="card-header">Expenses</div>
-          <div class="card-body">
-            <table class="table" id="Account">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Category</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Amount</th>
-                  <th scope="col">Mode</th>
-                  <th scope="col">Edit</th>
-                  <th scope="col">Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="col">Accomodation</th>
-                  <th scope="col">House Rent</th>
-                  <th scope="col">450</th>
-                  <th scope="col">Card</th>
-                  <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
-                        src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
-                  <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
-                        src="../../public/images/delete.jpg" height="20" width="20"></a></th>
-
-                </tr>
-                <tr>
-                  <th scope="col">vacation</th>
-                  <th scope="col">Niagra Falls</th>
-                  <th scope="col">300</th>
-                  <th scope="col">Card</th>
-                  <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
-                        src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
-                  <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
-                        src="../../public/images/delete.jpg" height="20" width="20"></a></th>
-
-                </tr>
-                  <tr>
-                  <th scope="col">Taxes</th>
-                  <th scope="col">State Tax</th>
-                  <th scope="col">200</th>
-                  <th scope="col">Card</th>
-                  <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
-                        src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
-                  <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
-                        src="../../public/images/delete.jpg" height="20" width="20"></a></th>
-
-                </tr>
-                  <tr>
-                  <th scope="col">Education</th>
-                  <th scope="col">Loan Interest</th>
-                  <th scope="col">1000</th>
-                  <th scope="col">Card</th>
-                  <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
-                        src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
-                  <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
-                        src="../../public/images/delete.jpg" height="20" width="20"></a></th>
-
-                </tr>
-                  <tr>
-                  <th scope="col">Utilities</th>
-                  <th scope="col">Water and Sewage</th>
-                  <th scope="col">200</th>
-                  <th scope="col">Card</th>
-                  <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
-                        src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
-                  <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
-                        src="../../public/images/delete.jpg" height="20" width="20"></a></th>
-
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
 
-      </div>
+        <div class="col">
+          <div class="card bg-light mb-3" style="width: 40rem; height: 25rem">
+            <div class="card-header">Expenses</div>
+            <div class="card-body">
+              <table class="table" id="Account">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Category</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Mode</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Accomodation</th>
+                    <th scope="col">House Rent</th>
+                    <th scope="col">450</th>
+                    <th scope="col">Card</th>
+                    <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
+                          src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                    <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
+                          src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+                  </tr>
+                  <tr>
+                    <th scope="col">vacation</th>
+                    <th scope="col">Niagra Falls</th>
+                    <th scope="col">300</th>
+                    <th scope="col">Card</th>
+                    <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
+                          src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                    <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
+                          src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+                  </tr>
+                  <tr>
+                    <th scope="col">Taxes</th>
+                    <th scope="col">State Tax</th>
+                    <th scope="col">200</th>
+                    <th scope="col">Card</th>
+                    <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
+                          src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                    <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
+                          src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+                  </tr>
+                  <tr>
+                    <th scope="col">Education</th>
+                    <th scope="col">Loan Interest</th>
+                    <th scope="col">1000</th>
+                    <th scope="col">Card</th>
+                    <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
+                          src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                    <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
+                          src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+                  </tr>
+                  <tr>
+                    <th scope="col">Utilities</th>
+                    <th scope="col">Water and Sewage</th>
+                    <th scope="col">200</th>
+                    <th scope="col">Card</th>
+                    <th scope="col"><a href="/gymMember/update/{{this._id}}"><img alt="Edit"
+                          src="../../public/images/Editing-edit-icon.jpg" height="20" width="20"></a></th>
+                    <th scope="col"><a href="/gymMember/delete/{{this._id}}"><img alt="Delete"
+                          src="../../public/images/delete.jpg" height="20" width="20"></a></th>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </article>
