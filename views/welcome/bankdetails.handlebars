@@ -14,6 +14,10 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="./howitworks">How it works</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./aboutus">About Us</a>
+                    </li>
+                
                 </ul>
                 {{#if error}}
                 <div class="alert alert-danger" role="alert">
@@ -25,7 +29,7 @@
                     {{logoutMsg}}
                 </div>
                 {{/if}}
-                <a href="/Logout"><button class="btn btn-outline-info my-2 my-sm-0 mr-3" name="login" id="login"
+                <a href="/Logout"><button class="cust-button my-2 my-sm-0 mr-3" name="login" id="login"
                         type="submit">Logout</button></a>
             </div>
         </nav>
@@ -56,7 +60,7 @@
                 <div class="modal-footer bg-dark">
             <input type="submit"  name="addnewaccount" id="addnewaccount" formaction  ="bankdetails/add"value="Add New Account " onclick="window.location.href='/bankdetails/add'" class="btn btn-secondary"/>           
 
-            <button type="submit" name="ok" id="ok" onclick="window.location.href='/expenses'" class="btn btn-primary">Next</button>
+            <button type="submit" name="ok" id="ok" onclick="window.location.href='/expenses'" class="cust-button">Next</button>
          </form>
         
     </div>

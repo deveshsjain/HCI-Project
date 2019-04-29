@@ -27,7 +27,7 @@ body {
 }
 
 .animatedbutton {
-    background-color: #EF5A0C;
+    background-color: rgb(39, 115, 42);
 }
 
 .bg-light-vb {
@@ -413,7 +413,7 @@ thead {
 }
 
 .animatedbutton {
-  background-color: #EF5A0C;
+  background-color:rgb(39, 115, 42);
   -webkit-border-radius: 10px;
   border-radius: 10px;
   border: none;
@@ -432,27 +432,27 @@ thead {
 }
 
 @-webkit-keyframes glowing {
-  0% { background-color: #EF5A0C; -webkit-box-shadow: 0 0 3px #EF5A0C; }
-  50% { background-color: #EF5A0C; -webkit-box-shadow: 0 0 10px #EF5A0C; }
-  100% { background-color: #EF5A0C; -webkit-box-shadow: 0 0 3px #EF5A0C; }
+  0% { background-color: rgb(39, 115, 42); -webkit-box-shadow: 0 0 3px rgb(39, 115, 42); }
+  50% { background-color: rgb(39, 115, 42); -webkit-box-shadow: 0 0 10px rgb(39, 115, 42); }
+  100% { background-color: rgb(39, 115, 42); -webkit-box-shadow: 0 0 3px rgb(39, 115, 42); }
 }
 
 @-moz-keyframes glowing {
-  0% { background-color: #EF5A0C; -moz-box-shadow: 0 0 3px #EF5A0C; }
-  50% { background-color: #EF5A0C; -moz-box-shadow: 0 0 10px #EF5A0C; }
-  100% { background-color: #EF5A0C; -moz-box-shadow: 0 0 3px #EF5A0C; }
+  0% { background-color: rgb(39, 115, 42); -moz-box-shadow: 0 0 3px rgb(39, 115, 42); }
+  50% { background-color: rgb(39, 115, 42); -moz-box-shadow: 0 0 10px rgb(39, 115, 42); }
+  100% { background-color: rgb(39, 115, 42); -moz-box-shadow: 0 0 3px rgb(39, 115, 42); }
 }
 
 @-o-keyframes glowing {
-  0% { background-color: #EF5A0C; box-shadow: 0 0 3px #EF5A0C; }
-  50% { background-color: #EF5A0C; box-shadow: 0 0 10px #EF5A0C; }
-  100% { background-color: #EF5A0C; box-shadow: 0 0 3px #EF5A0C; }
+  0% { background-color: rgb(39, 115, 42); box-shadow: 0 0 3px rgb(39, 115, 42); }
+  50% { background-color: rgb(39, 115, 42); box-shadow: 0 0 10px rgb(39, 115, 42); }
+  100% { background-color: rgb(39, 115, 42); box-shadow: 0 0 3px rgb(39, 115, 42); }
 }
 
 @keyframes glowing {
-  0% { background-color: #EF5A0C; box-shadow: 0 0 3px #EF5A0C; }
-  50% { background-color: #EF5A0C; box-shadow: 0 0 10px #EF5A0C; }
-  100% { background-color: #EF5A0C; box-shadow: 0 0 3px #EF5A0C; }
+  0% { background-color: rgb(39, 115, 42); box-shadow: 0 0 3px rgb(39, 115, 42); }
+  50% { background-color: rgb(39, 115, 42); box-shadow: 0 0 10px rgb(39, 115, 42); }
+  100% { background-color: rgb(39, 115, 42); box-shadow: 0 0 3px rgb(39, 115, 42); }
 }
 
 .img-wrapper
@@ -585,4 +585,15 @@ thead {
 }
 
 
-
+.cust-button {
+  background-color: rgb(39, 115, 42);
+  border-radius: 12px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
